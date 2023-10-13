@@ -1,8 +1,8 @@
-import { HOME } from "./src/common/constants.js";
-import { q } from "./src/events/helpers.js";
-import { toggleFavoriteStatus } from "./src/events/favorite-events.js";
-import { renderTrending, renderUpload, loadPage } from "./src/events/navigation-events.js";
-import { renderSearchItems } from "./src/events/search-events.js";
+import { HOME } from './src/common/constants.js';
+import { q } from './src/events/helpers.js';
+import { toggleFavoriteStatus } from './src/events/favorite-events.js';
+import { renderTrending, renderUpload, loadPage } from './src/events/navigation-events.js';
+import { renderSearchItems } from './src/events/search-events.js';
 document.addEventListener('DOMContentLoaded', () => {
 
     // add global listener
