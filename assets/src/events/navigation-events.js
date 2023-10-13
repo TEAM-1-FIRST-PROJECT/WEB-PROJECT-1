@@ -59,7 +59,12 @@ const renderAbout = () => {
 };
 
 export const renderGifDetails = async (id = null) => {
-    const gifDetails = await loadGifDetails(id);
-  
-    q(CONTAINER_SELECTOR).innerHTML = (gifDetails);
+    try {
+        const gifDetails = await loadGifDetails(id);
+        q(CONTAINER_SELECTOR).innerHTML = (gifDetails);
+        
+    } catch (error) {
+        console.error(error);
+    }
+    
   };
