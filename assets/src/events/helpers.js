@@ -13,14 +13,13 @@ export const setActiveNav = (page) => {
     .forEach(element => element
       .getAttribute('data-page') === page
       ? element.classList.add('active')
-      : element.classList.remove('active')
-      );
+      : element.classList.remove('active'));
 };
 
-export const renderFavoriteStatus = (movieId) => {
+export const renderFavoriteStatus = (gifId) => {
   const favorites = getFavorites();
 
-  return favorites.includes(movieId)
-    ? `<span class="favorite active" data-movie-id="${movieId}">${FULL_HEART}</span>`
-    : `<span class="favorite" data-movie-id="${movieId}">${EMPTY_HEART}</span>`;
+  return favorites.includes(gifId)
+    ? `<span class="favorite active" data-movie-id="${gifId}">${FULL_HEART}</span>`
+    : `<span class="favorite" data-movie-id="${gifId}">${EMPTY_HEART}</span>`;
 };
