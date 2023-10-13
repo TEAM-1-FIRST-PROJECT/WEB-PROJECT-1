@@ -27,6 +27,11 @@
             <a href="#" class="nav-link" data-page="upload">Upload</a>
             <a href="#" class="nav-link" data-page="favorite">Favorite</a>
             <a href="#" class="nav-link" data-page="about">About</a>
+            <form id="uploadForm">
+                <input type="file" accept=".gif" id="gifInput" required>
+                <button type="submit">Upload</button>
+            </form>
+            <div id="uploadStatus"></div>
             
         </nav>
 
@@ -46,7 +51,7 @@
     </footer>
 </div>
 
-    <script src="src/index.js" type="module"></script>
+    <script src="index.js" type="module"></script>
 </body>
 
 </html>
