@@ -44,8 +44,13 @@ export const renderUpload = () => {
 }
 
 export const renderTrending = async () => {
-};
-
+    try {
+        const trendingGIFs = await loadTrendingGif();
+        q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trendingGIFs);
+    } catch (error) {
+        console.error(error.message);
+    }
+}
 const renderFavorites = () => {
 
 }

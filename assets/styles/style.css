@@ -67,9 +67,9 @@ html, body {
   
   .hidden {
     display: none;
-  }
-  
-  a.active {
+}
+
+a.active {
     color: white;
     font-weight: bold;
   }
