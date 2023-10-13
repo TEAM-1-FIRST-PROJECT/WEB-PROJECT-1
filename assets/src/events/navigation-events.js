@@ -1,5 +1,5 @@
 import { UPLOAD, TRENDING, HOME, FAVORITES, ABOUT, CONTAINER_SELECTOR } from '../common/constants.js';
-import { uploadGif, displayUploadedGif, displayTrendingGif, displayGifDetails } from '../requests/request-service.js';
+import { loadTrendingGif, loadGifDetails } from '../requests/request-service.js';
 import { toAboutView } from '../views/about-view.js';
 import { toHomeView } from '../views/home-view.js';
 import { toTrendingView } from '../views/trending-view.js';
@@ -35,7 +35,7 @@ export const loadPage = (page = '') => {
             setActiveNav(ABOUT);
             return renderAbout();
 
-        default: return null;
+        default: return null; 
     }
 
 };
@@ -43,9 +43,8 @@ export const renderUpload = () => {
 
 }
 
-export const renderTrending = () => {
-
-}
+export const renderTrending = async () => {
+};
 
 const renderFavorites = () => {
 
@@ -58,3 +57,9 @@ const renderHome = () => {
 const renderAbout = () => {
     q(CONTAINER_SELECTOR).innerHTML = toAboutView();
 };
+
+export const renderGifDetails = async (id = null) => {
+    const gifDetails = await loadGifDetails(id);
+  
+    q(CONTAINER_SELECTOR).innerHTML = (gifDetails);
+  };

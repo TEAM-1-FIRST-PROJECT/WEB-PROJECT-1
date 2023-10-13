@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   
       // show category events
-      if (e.target.classList.contains('view-category-btn')) {
-        renderTrending(+e.target.getAttribute('data-category-id'));
+      if (e.target.classList.contains('view-trending-btn')) {
+        renderTrending(+e.target.getAttribute('data-trending-id'));
       }
   
       // show movie events

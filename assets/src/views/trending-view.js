@@ -1,14 +1,10 @@
-export const toTrendingView = () => {
-
-}
-
-ТОВА ТУК СЪЩО ТРЯБВА ДА СЕ ОПРАВИ КОГАТО СЕ НАПИШЕ HMTL-a НА ТАЗИ ФУНКЦИЯ
-
-if (e.target.classList.contains(ТУК > 'view-category-btn')) {
- ТУК Е ОПРЕАВЕНО > renderTrending(+e.target.getAttribute(ТУК > 'data-category-id'));
-}
-
-ТОВА Е В index.js
+export const toTrendingView = (trending) => `
+<div id="trending">
+  <h1>Trending Gifts</h1>
+ 
+  <a href="${trending.data[0].url}">LINK</a>
+</div>
+`;
 
 
 
