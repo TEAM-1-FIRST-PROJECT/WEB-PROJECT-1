@@ -1,7 +1,6 @@
 export const toTrendingView = (trending) => `
 <div id="trending">
   <h1>Trending Gifts</h1>
- 
   <a href="${trending.data[0].url}">LINK</a>
 </div>
 `;

@@ -3,12 +3,6 @@ export const toUploadView = () => {
 }
 
 
-ТОВА ТУК СЪЩО ТРЯБВА ДА СЕ ОПРАВИ КОГАТО СЕ НАПИШЕ HMTL-a НА ТАЗИ ФУНКЦИЯ index.js
-if (e.target.classList.contains(ТУК >'view-movie-btn')) {
-    renderUpload(+e.target.getAttribute(ТУК >'data-movie-id'));
-}
-
-
 
 
 // export const toMoviesFromCategoryView = (category, movies) => `

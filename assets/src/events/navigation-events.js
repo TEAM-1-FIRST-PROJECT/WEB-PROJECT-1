@@ -45,12 +45,12 @@ export const renderUpload = () => {
 
 export const renderTrending = async () => {
     try {
-      const trendingGIFs = await loadTrendingGif();
-      q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trendingGIFs);
+        const trendingGIFs = await loadTrendingGif();
+        q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trendingGIFs);
     } catch (error) {
-      console.error(error.message);
+        console.error(error.message);
     }
-
+}
 const renderFavorites = () => {
 
 }
@@ -64,7 +64,12 @@ const renderAbout = () => {
 };
 
 export const renderGifDetails = async (id = null) => {
-    const gifDetails = await loadGifDetails(id);
-  
-    q(CONTAINER_SELECTOR).innerHTML = (gifDetails);
+    try {
+        const gifDetails = await loadGifDetails(id);
+        q(CONTAINER_SELECTOR).innerHTML = (gifDetails);
+        
+    } catch (error) {
+        console.error(error);
+    }
+    
   };
