@@ -1,5 +1,5 @@
 import { UPLOAD, UPLOADED, TRENDING, HOME, FAVORITES, ABOUT, CONTAINER_SELECTOR } from '../common/constants.js';
-import { loadTrendingGif, loadGifDetails } from '../requests/request-service.js';
+import { loadTrendingGif, loadGifDetails, loadSingleGif } from '../requests/request-service.js';
 import { toAboutView } from '../views/about-view.js';
 import { toHomeView } from '../views/home-view.js';
 import { toTrendingView } from '../views/trending-view.js';
@@ -48,9 +48,9 @@ export const loadPage = (page = '') => {
 export const renderUpload = () => {
     q(CONTAINER_SELECTOR).innerHTML = toUploadForm();
 }
-const renderUploadedGifs = () => {
-    console.log('upl')
+const renderUploadedGifs = () => {   
     const uploadedGifs = getUploadedGifs();
+    console.log(uploadedGifs)
     const gifs = uploadedGifs.map(id => loadSingleGif(id));
     q(CONTAINER_SELECTOR).innerHTML = toUploadedGifs(gifs);
   };
