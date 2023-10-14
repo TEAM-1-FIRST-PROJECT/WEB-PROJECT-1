@@ -6,7 +6,7 @@ import { toTrendingView } from '../views/trending-view.js';
 import { toFavoritesView } from '../views/favorite-view.js';
 import { getFavorites } from '../data/favorites.js';
 import { q, setActiveNav } from './helpers.js';
-
+import { toUploadForm } from '../views/uploadForm-view.js';
 
 
 
@@ -24,7 +24,6 @@ export const loadPage = (page = '') => {
             return renderTrending();
 
         case UPLOAD:
-            console.log('upload')
             setActiveNav(UPLOAD);
             return renderUpload();
 
@@ -41,7 +40,7 @@ export const loadPage = (page = '') => {
 
 };
 export const renderUpload = () => {
-
+    q(CONTAINER_SELECTOR).innerHTML = toUploadForm();
 }
 
 export const renderTrending = async () => {

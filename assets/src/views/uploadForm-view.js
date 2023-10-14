@@ -1,7 +1,11 @@
-export const toUploadView = () => {
-
-}
-
+export const toUploadForm = () => `
+<div>
+  <form id="uploadForm" id="uploadForm">
+    <input type="file" accept=".gif" id="gifInput">
+    <button type="submit">Upload GIF</button>
+  </form>
+</div>
+`;
 
 
 
