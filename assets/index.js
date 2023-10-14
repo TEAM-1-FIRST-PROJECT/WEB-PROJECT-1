@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // nav events
     if (e.target.classList.contains('nav-link')) {
-
       loadPage(e.target.getAttribute('data-page'));
     }
 
@@ -21,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // show movie events
     if (e.target.classList.contains('view-movie-btn')) {
-      renderUpload(+e.target.getAttribute('data-movie-id'));
+      //renderUpload(+e.target.getAttribute('data-movie-id'));
     }
 
     // toggle favorite event
@@ -36,31 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSearchItems(e.target.value);
   });
 
-  // upload events
-  document.getElementById('uploadForm').addEventListener('submit', async function (event) {
-    event.preventDefault();
 
-    const formData = new FormData();
-    const fileInput = document.getElementById('gifInput');
-    formData.append('file', fileInput.files[0]);
 
-    try {
-      const response = await fetch('https://api.giphy.com/v1/gifs/upload?api_key=', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        document.getElementById('uploadStatus').innerHTML = `GIF uploaded successfully. ID: ${data.data.id}`;
-      } else {
-        throw new Error('Failed to upload GIF');
-      }
-    } catch (error) {
-      console.error(error);
-      document.getElementById('uploadStatus').innerHTML = 'Error uploading GIF';
-    }
-  });
 
   loadPage(HOME);
 

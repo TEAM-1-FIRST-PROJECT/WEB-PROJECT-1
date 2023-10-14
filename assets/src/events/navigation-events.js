@@ -24,6 +24,7 @@ export const loadPage = (page = '') => {
             return renderTrending();
 
         case UPLOAD:
+            console.log('upload')
             setActiveNav(UPLOAD);
             return renderUpload();
 
