@@ -1,28 +1,17 @@
-export const toTrendingView = (trending) => `
-<div id="trending">
-  <h1>Trending Gifts</h1>
-  <a href="${trending.data[0].url}">LINK</a>
-</div>
-`;
-
-
-
-
-
-
-// export const toCategoriesView = (categories) => `
-// <div id="categories">
-//   <h1>Categories</h1>
-//   <div class="content">
-//     ${categories.map(toSingleCategoryView).join('\n')}
-//   </div>
-// </div>
-// `;
-
-// const toSingleCategoryView = (category) => `
-// <div class="category">
-//   <h1>${category.name}</h1>
-//   <p>${category.moviesCount} movies</p>
-//   <button class="view-category-btn" data-category-id="${category.id}">View category</button>
-// </div>
-// `;
+export const toTrendingView = (trending) => {
+    const gifs = trending.data.map((gif) => `
+    <div class="trending-gif">
+      <img src="${gif.images.fixed_height.url}">
+      <a href="#" class="favorite" data-movie-id="${gif.id}">Add to Favorites</a>
+    </div>
+  `).join('');
+  
+  return `
+    <div id="trending">
+      <h1>Trending GIFs</h1>
+      <div class="trending-gifs-container">
+        ${gifs}
+      </div>
+    </div>
+  `
+};
