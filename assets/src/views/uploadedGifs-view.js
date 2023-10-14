@@ -1,9 +1,18 @@
-import { toGifDetailed } from "./gif-view";
-export const toUploadedGifsView = (gifs) => `
-<div id="gifs">
-  <h1>Uploaded gifs:</h1>
-  <div class="content">
-    ${gifs.map(toGifDetailed).join('\n') || '<p>Upload some gifs to see them here.</p>'}
+export const toUploadedGifsView = (uploaded) => {
+  console.log(uploaded);
+  const gifs = uploaded.map((el) => `
+  <div class="uploaded-gif">
+    <img src="${el.data.images.fixed_height.url}">
+    <a href="#" class="uploaded" data-movie-id="${el.data.id}">Add to Favorites</a>
   </div>
-</div>
-`;
+`).join('');
+
+return `
+  <div id="trending">
+    <h1>Uploaded GIFs</h1>
+    <div class="uploaded-gifs-container">
+      ${gifs}
+    </div>
+  </div>
+`
+};

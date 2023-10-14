@@ -8,6 +8,7 @@ import { getFavorites } from '../data/favorites.js';
 import { q, setActiveNav } from './helpers.js';
 import { toUploadForm } from '../views/uploadForm-view.js';
 import { getUploadedGifs } from '../data/uploadedGifs.js';
+import { toUploadedGifsView } from '../views/uploadedGifs-view.js';
 
 
 
@@ -48,11 +49,10 @@ export const loadPage = (page = '') => {
 export const renderUpload = () => {
     q(CONTAINER_SELECTOR).innerHTML = toUploadForm();
 }
-const renderUploadedGifs = () => {   
-    const uploadedGifs = getUploadedGifs();
-    console.log(uploadedGifs)
-    const gifs = uploadedGifs.map(id => loadSingleGif(id));
-    q(CONTAINER_SELECTOR).innerHTML = toUploadedGifs(gifs);
+const renderUploadedGifs = async () => {   
+    const uploadedGifs = getUploadedGifs(); 
+    const gifs = await Promise.all(uploadedGifs.map(id => loadSingleGif(id)));
+    q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(gifs);
   };
 
 export const renderTrending = async () => {

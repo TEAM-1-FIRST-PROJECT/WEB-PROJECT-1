@@ -3,15 +3,17 @@ import { API_KEY } from "../common/constants.js"
 import { uploadGif } from "../events/upload-event.js"
 
 export const uploadNewGif = () => {
-return uploadGif();
+    return uploadGif();
 }
 
 export const loadUploadedGif = () => {
 
 }
 
-export const loadSingleGif = (id) =>{
-return getGifById(id);
+export const loadSingleGif = async (id) => {
+    const url = BASE_URL + '/' + id + '?api_key=7vv6tDTalN9b6qJzUPnOQpz98o3Rnrgp&rating=g'
+
+    return (await fetch(url)).json();
 }
 
 
