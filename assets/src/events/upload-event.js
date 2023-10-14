@@ -1,11 +1,9 @@
 import { addUploadedGifs } from "../data/uploadedGifs.js";
 
 export const uploadGif = () => { 
-  console.log('uploading out');
   document.getElementById('uploadForm').addEventListener('submit', async (event)=>{
     
     event.preventDefault();
-
     const formData = new FormData();
     const fileInput = document.getElementById('inputGif');
     formData.append('file', fileInput.files[0]);
@@ -15,8 +13,7 @@ export const uploadGif = () => {
       const response = await fetch(url, {
         method: 'POST',
         body: formData,
-      });
-      
+      });      
       if (response.ok) {
         const data = await response.json();console.log(data);
         document.getElementById('uploadForm').innerHTML = `GIF uploaded successfully. ID: ${data.data.id}`;

@@ -36,9 +36,5 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSearchItems(e.target.value);
   });
 
-
-
-
   loadPage(HOME);
-
 });
