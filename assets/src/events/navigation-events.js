@@ -1,4 +1,4 @@
-import { UPLOAD, TRENDING, HOME, FAVORITES, ABOUT, CONTAINER_SELECTOR } from '../common/constants.js';
+import { UPLOAD, UPLOADED, TRENDING, HOME, FAVORITES, ABOUT, CONTAINER_SELECTOR } from '../common/constants.js';
 import { loadTrendingGif, loadGifDetails } from '../requests/request-service.js';
 import { toAboutView } from '../views/about-view.js';
 import { toHomeView } from '../views/home-view.js';
@@ -23,25 +23,36 @@ export const loadPage = (page = '') => {
             setActiveNav(TRENDING);
             return renderTrending();
 
+        case FAVORITES:
+            setActiveNav(FAVORITES);
+            return renderFavorites();
+
         case UPLOAD:
             setActiveNav(UPLOAD);
             return renderUpload();
 
-        case FAVORITES:
-            setActiveNav(FAVORITES);
-            return renderFavorites();
+        case UPLOADED:
+            setActiveNav(UPLOADED);
+            return renderUploadedGifs();
+
 
         case ABOUT:
             setActiveNav(ABOUT);
             return renderAbout();
 
-        default: return null; 
+        default: return null;
     }
 
 };
 export const renderUpload = () => {
     q(CONTAINER_SELECTOR).innerHTML = toUploadForm();
 }
+const renderUploadedGifs = () => {
+    console.log('upl')
+    const uploadedGifs = getUploadedGifs();
+    const gifs = uploadedGifs.map(id => loadSingleGif(id));
+    q(CONTAINER_SELECTOR).innerHTML = toUploadedGifs(gifs);
+  };
 
 export const renderTrending = async () => {
     try {
@@ -67,9 +78,9 @@ export const renderGifDetails = async (id = null) => {
     try {
         const gifDetails = await loadGifDetails(id);
         q(CONTAINER_SELECTOR).innerHTML = (gifDetails);
-        
+
     } catch (error) {
         console.error(error);
     }
-    
-  };
+
+};

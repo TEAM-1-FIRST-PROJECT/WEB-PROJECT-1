@@ -4,6 +4,8 @@ export const TRENDING = 'trending';
 
 export const UPLOAD = 'upload';
 
+export const UPLOADED = 'uploaded-gifs';
+
 export const FAVORITES = 'favorites';
 
 export const ABOUT = 'about';
