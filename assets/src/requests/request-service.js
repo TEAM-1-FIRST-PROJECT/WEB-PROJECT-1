@@ -10,6 +10,11 @@ export const loadUploadedGif = () => {
 
 }
 
+export const loadSingleGif = (id) =>{
+return getGifById(id);
+}
+
+
 export const loadTrendingGif = async () => {
 
     try {
