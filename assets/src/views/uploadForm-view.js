@@ -2,7 +2,7 @@ export const toUploadForm = () => `
 <div>
   <form class="form" id="uploadForm">
     <input type="file" accept=".gif" id="gifInput">
-    <button type="submit">Upload GIF</button>
+    <button type="submit" class='submit'>Upload GIF</button>
   </form>
 </div>
 `;

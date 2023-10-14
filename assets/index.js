@@ -3,6 +3,7 @@ import { q } from './src/events/helpers.js';
 import { toggleFavoriteStatus } from './src/events/favorite-events.js';
 import { renderTrending, renderUpload, loadPage } from './src/events/navigation-events.js';
 import { renderSearchItems } from './src/events/search-events.js';
+import { uploadNewGif } from './src/requests/request-service.js';
 document.addEventListener('DOMContentLoaded', () => {
 
   // add global listener
@@ -18,9 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
       renderTrending(+e.target.getAttribute('data-trending-id'));
     }
 
-    // show movie events
-    if (e.target.classList.contains('view-movie-btn')) {
-      //renderUpload(+e.target.getAttribute('data-movie-id'));
+    // upload events
+    if (e.target.classList.contains('submit')) {
+      uploadNewGif();
     }
 
     // toggle favorite event

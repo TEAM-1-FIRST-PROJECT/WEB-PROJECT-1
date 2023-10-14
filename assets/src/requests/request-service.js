@@ -1,8 +1,9 @@
 import { BASE_URL } from "../common/constants.js"
 import { API_KEY } from "../common/constants.js"
+import { uploadGif } from "../events/upload-event.js"
 
-export const UploadGif = () => {
-
+export const uploadNewGif = () => {
+return uploadGif();
 }
 
 export const loadUploadedGif = () => {
