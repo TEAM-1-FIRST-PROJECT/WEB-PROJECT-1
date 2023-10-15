@@ -6,7 +6,7 @@ export const addFavorite = (gifId) => {
     return;
   }
 
-  favorites.push(movieId);
+  favorites.push(gifId);
   localStorage.setItem('favorites', JSON.stringify(favorites));
 };
 

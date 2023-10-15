@@ -6,6 +6,7 @@ import { toTrendingView } from '../views/trending-view.js';
 import { toFavoritesView } from '../views/favorite-view.js';
 import { getFavorites } from '../data/favorites.js';
 import { q, setActiveNav } from './helpers.js';
+import { toGifDetailsView } from '../views/gif-details-view.js';
 
 
 
@@ -46,6 +47,7 @@ export const renderUpload = () => {
 export const renderTrending = async () => {
     try {
         const trendingGIFs = await loadTrendingGif();
+        console.log(trendingGIFs);
         q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trendingGIFs);
     } catch (error) {
         console.error(error.message);
@@ -66,7 +68,8 @@ const renderAbout = () => {
 export const renderGifDetails = async (id = null) => {
     try {
         const gifDetails = await loadGifDetails(id);
-        q(CONTAINER_SELECTOR).innerHTML = (gifDetails);
+        console.log(gifDetails);
+        q(CONTAINER_SELECTOR).innerHTML = toGifDetailsView(gifDetails);
         
     } catch (error) {
         console.error(error);

@@ -23,7 +23,9 @@ export const loadTrendingGif = async () => {
 
 export const loadGifDetails = async (id) => {
     try {
-        const loadGifDetailsURL = `${BASE_URL}/gif_id=${id}?api_key=${API_KEY}`;
+        console.log(id);
+        debugger;
+        const loadGifDetailsURL = `${BASE_URL}/${id}?api_key=${API_KEY}`;
         const response = await fetch(loadGifDetailsURL);
         return response.json();
     } catch (error) {

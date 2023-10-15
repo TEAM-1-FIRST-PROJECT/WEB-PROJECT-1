@@ -1,7 +1,7 @@
 import { HOME } from './src/common/constants.js';
 import { q } from './src/events/helpers.js';
 import { toggleFavoriteStatus } from './src/events/favorite-events.js';
-import { renderTrending, renderUpload, loadPage } from './src/events/navigation-events.js';
+import { renderTrending, renderUpload, loadPage, renderGifDetails } from './src/events/navigation-events.js';
 import { renderSearchItems } from './src/events/search-events.js';
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -15,18 +15,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // show category events
-    if (e.target.classList.contains('view-trending-btn')) {
-      renderTrending(+e.target.getAttribute('data-trending-id'));
+    if (e.target.classList.contains('view-trending-details-btn')) {
+      debugger;
+      console.log(e.target.getAttribute('data-trending-details-id'));
+      renderGifDetails(e.target.getAttribute('data-trending-details-id'));
     }
 
     // show movie events
     if (e.target.classList.contains('view-movie-btn')) {
-      renderUpload(+e.target.getAttribute('data-movie-id'));
+      renderUpload(e.target.getAttribute('data-movie-id'));
     }
 
     // toggle favorite event
     if (e.target.classList.contains('favorite')) {
-      toggleFavoriteStatus(+e.target.getAttribute('data-movie-id'));
+      toggleFavoriteStatus(e.target.getAttribute('data-gif-id'));
     }
 
   });
