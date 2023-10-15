@@ -324,6 +324,7 @@ img {
   /* Change text color on hover */
 }
 
+.trending-gifs-container,
 .uploaded-gifs-container {
   display: grid;
   gap: 30px;
