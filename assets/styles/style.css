@@ -284,33 +284,51 @@ div.movie-detailed div.movie-info {
 
 /* Uploaded GIFs styles */
 .uploaded-gif {
-  position: relative; /* Container needs to be positioned */
+  position: relative;
+  /* Container needs to be positioned */
 }
 
 .image-container {
-  position: relative; /* Image container needs to be positioned */
+  position: relative;
+  /* Image container needs to be positioned */
 }
 
 img {
-  display: block; /* Ensure the image is a block element */
-  max-width: 100%; /* Make sure the image fits within its container */
+  display: block;
+  /* Ensure the image is a block element */
+  max-width: 100%;
+  /* Make sure the image fits within its container */
 }
 
 .uploaded-gif {
-  position: relative; /* Container needs to be positioned */
+  position: relative;
+  /* Container needs to be positioned */
 }
 
 .favorite {
   position: absolute;
-  bottom: 0; /* Position at the bottom of the container */
-  left: 0; /* Position at the left of the container */
-  background-color: rgba(212, 203, 203, 0.8); /* Semi-transparent background for better readability */
-  padding: 5px; /* Some padding for the link */
+  bottom: 0;
+  /* Position at the bottom of the container */
+  right: 0;
+  /* Position at the left of the container */
+  background-color: rgba(212, 203, 203, 0.8);
+  /* Semi-transparent background for better readability */
+  padding: 5px;
+  /* Some padding for the link */
 }
 
 .favorite:hover {
-  background-color: rgba(0, 0, 0, 0.8); /* Change background color on hover */
-  color: white; /* Change text color on hover */
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Change background color on hover */
+  color: white;
+  /* Change text color on hover */
+}
+
+.uploaded-gifs-container {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-rows: masonry;
 }
 
 /* End uploaded GIFs styles */
