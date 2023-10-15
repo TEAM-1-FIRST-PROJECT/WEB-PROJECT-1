@@ -1,3 +1,5 @@
+import { renderFavoriteStatus } from "../events/favorite-events.js";
+
 export const toSearchView = (gifs, searchTerm) => `
 <div id="search">
   <h1>GIFs found for "${searchTerm}":</h1>
@@ -12,6 +14,7 @@ export const toSearchSimple = (gif) => `
 <div class="content">
   <img src="${gif.images.fixed_height.url}">
   <button class="view-trending-details-btn" data-trending-details-id="${gif.id}">Gif Details</button>
+  ${renderFavoriteStatus(gif.id)}
 </div>
 </div>
 `;

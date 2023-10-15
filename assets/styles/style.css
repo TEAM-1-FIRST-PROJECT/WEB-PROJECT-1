@@ -94,7 +94,7 @@ span {
 .trending-gifs-container,
 .form,
 .uploaded-gifs-container,
-#favorites {
+.favorite-view {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -171,7 +171,7 @@ span.favorite.active {
   color: rgb(255, 0, 149);
 }
 
-.form {}
+
 
 /* End template styling */
 

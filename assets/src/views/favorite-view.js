@@ -5,6 +5,7 @@ export const toFavoritesView = (favorites) => {
   const gifs = favorites.map((gif) => `
  
       <img src="${gif.data.images.fixed_height.url}">
+      <button class="view-trending-details-btn" data-trending-details-id="${gif.data.id}">Gif Details</button>
       ${renderFavoriteStatus(gif.data.id)}
     </div>
     
@@ -13,7 +14,7 @@ export const toFavoritesView = (favorites) => {
     return `
     
       <div id="favorites">
-        <div class="content">
+        <div class="favorite-view">
           ${gifs || '<p>Hearth some GIF to see them here.</p>'} 
         </div>
       </div>
