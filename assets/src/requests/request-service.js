@@ -11,9 +11,13 @@ export const loadUploadedGif = () => {
 }
 
 export const loadSingleGif = async (id) => {
-    const url = BASE_URL + '/' + id + '?api_key=7vv6tDTalN9b6qJzUPnOQpz98o3Rnrgp&rating=g'
+    const url = `${BASE_URL}/${id}?api_key=${API_KEY}&rating=g`
+    try {
+        return (await fetch(url)).json();
+    } catch (error) {
+        console.error(error.message)
+    }
 
-    return (await fetch(url)).json();
 }
 
 
