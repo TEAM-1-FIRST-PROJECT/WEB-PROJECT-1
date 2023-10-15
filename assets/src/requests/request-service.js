@@ -10,8 +10,13 @@ export const uploadNewGif = () => {
     return uploadGif();
 }
 
-export const loadUploadedGif = () => {
-
+export const loadHomePage = async () => {
+    const url = `http://api.giphy.com/v1/gifs/search?q=mondey&api_key=${API_KEY}&limit=5` //`${BASE_URL}/${id}?api_key=${API_KEY}&rating=g`
+    try {
+        return (await fetch(url)).json();
+    } catch (error) {
+        console.error(error.message)
+    }
 }
 
 /**

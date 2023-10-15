@@ -1,8 +1,8 @@
 import { UPLOAD, UPLOADED, TRENDING, HOME, FAVORITES, ABOUT, CONTAINER_SELECTOR } from '../common/constants.js';
-import { loadTrendingGif, loadGifDetails, loadSingleGif } from '../requests/request-service.js';
+import { loadTrendingGif, loadGifDetails, loadSingleGif, loadHomePage } from '../requests/request-service.js';
 import { toAboutView } from '../views/about-view.js';
-import { toHomeView } from '../views/home-view.js';
 import { toTrendingView } from '../views/trending-view.js';
+import { toHomeView } from '../views/home-view.js';
 import { toFavoritesView } from '../views/favorite-view.js';
 import { getFavorites } from '../data/favorites.js';
 import { q, setActiveNav } from './helpers.js';
@@ -85,8 +85,13 @@ const renderFavorites = () => {
 
 }
 
-const renderHome = () => {
-    q(CONTAINER_SELECTOR).innerHTML = toHomeView();
+const renderHome = async () => {
+    try {
+        const randomGIFs = await loadHomePage();
+        q(CONTAINER_SELECTOR).innerHTML = toHomeView(randomGIFs)
+    } catch (error) {
+console.error(error.message)
+    }
 };
 
 const renderAbout = () => {
