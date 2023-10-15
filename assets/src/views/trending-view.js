@@ -1,9 +1,12 @@
+import { renderFavoriteStatus } from "../events/helpers.js";
+
 export const toTrendingView = (trending) => {
     const gifs = trending.data.map((gif) => `
     
     <div class="trending-gif">
       <img src="${gif.images.fixed_height.url}">
       <button class="view-trending-details-btn" data-trending-details-id="${gif.id}">Gif Details</button>
+      ${renderFavoriteStatus(gif.id)}
     </div>
     
   `).join('');
@@ -12,7 +15,7 @@ export const toTrendingView = (trending) => {
     <div id="trending">
       <h1>Trending GIFs</h1>     
       <div class="trending-gifs-container">
-        ${gifs}
+      ${gifs}
       </div>
     </div>
   `

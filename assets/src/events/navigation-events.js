@@ -81,7 +81,18 @@ export const renderTrending = async () => {
         console.error(error.message);
     }
 }
-const renderFavorites = () => {
+const renderFavorites = async () => {
+  
+    const favorites = getFavorites();
+    
+    try {
+        const result = await Promise.all(favorites.map(id => loadSingleGif(id)));
+        q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(result)
+    } catch (error) {
+        console.error(error);
+    }
+
+
 
 }
 
