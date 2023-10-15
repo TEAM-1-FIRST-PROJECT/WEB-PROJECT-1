@@ -27,9 +27,7 @@ export const loadSingleGif = async (id) => {
     } catch (error) {
         console.error(error.message)
     }
-
 }
-
 
 export const loadTrendingGif = async () => {
 
