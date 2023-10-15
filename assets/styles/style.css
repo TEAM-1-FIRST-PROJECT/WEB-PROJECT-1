@@ -331,4 +331,10 @@ img {
   grid-template-rows: masonry;
 }
 
+.trending-gifs-container {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-rows: masonry;
+}
 /* End uploaded GIFs styles */
