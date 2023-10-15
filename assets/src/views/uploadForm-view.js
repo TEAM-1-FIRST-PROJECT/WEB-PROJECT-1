@@ -1,3 +1,7 @@
+/**
+ * Renders an upload form in the specified container.
+ * @returns {void}
+ */
 export const toUploadForm = () => `
 <div>
   <form class="form" id="uploadForm">

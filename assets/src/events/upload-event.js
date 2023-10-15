@@ -1,6 +1,10 @@
 import { addUploadedGifs } from "../data/uploadedGifs.js";
 import { UPLOAD_URL, API_KEY } from "../common/constants.js";
 
+/**
+ * Handles the submission of the upload form to upload a GIF.
+ * @returns {void}
+ */
 export const uploadGif = () => { 
   document.getElementById('uploadForm').addEventListener('submit', async (event)=>{
     

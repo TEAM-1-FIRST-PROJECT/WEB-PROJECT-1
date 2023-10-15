@@ -1,3 +1,7 @@
+/**
+ * Renders an uploaded GIFs in the specified container.
+ * @returns {void}
+ */
 export const toUploadedGifsView = (uploaded) => {
   const gifs = uploaded.map((gif) => `
     <div class="uploaded-gif">

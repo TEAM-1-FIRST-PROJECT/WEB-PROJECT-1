@@ -11,8 +11,11 @@ import { getUploadedGifs } from '../data/uploadedGifs.js';
 import { toUploadedGifsView } from '../views/uploadedGifs-view.js';
 
 
-
-
+/**
+ * Loads and renders the specified page based on the provided page name.
+ * @param {string} [page=''] - The name of the page to be loaded.
+ * @returns {void|null} Returns `void` if a valid page is loaded, otherwise `null`.
+ */
 export const loadPage = (page = '') => {
 
     switch (page) {
@@ -37,14 +40,11 @@ export const loadPage = (page = '') => {
             setActiveNav(UPLOADED);
             return renderUploadedGifs();
 
-
         case ABOUT:
             setActiveNav(ABOUT);
             return renderAbout();
-
         default: return null;
     }
-
 };
 
 /**

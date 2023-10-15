@@ -2,6 +2,10 @@ import { BASE_URL } from "../common/constants.js"
 import { API_KEY } from "../common/constants.js"
 import { uploadGif } from "../events/upload-event.js"
 
+/**
+ * Uploads a new GIF.
+ * @returns {function} .
+  */
 export const uploadNewGif = () => {
     return uploadGif();
 }
@@ -10,6 +14,12 @@ export const loadUploadedGif = () => {
 
 }
 
+/**
+ * Loads a single GIF by its ID.
+ * @param {string} id - The ID of the GIF.
+ * @returns {Promise<Object>} A promise that resolves with the GIF data.
+ * @throws {Error} If there is an error while fetching the GIF.
+ */
 export const loadSingleGif = async (id) => {
     const url = `${BASE_URL}/${id}?api_key=${API_KEY}&rating=g`
     try {
