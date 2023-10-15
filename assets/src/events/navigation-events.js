@@ -101,7 +101,7 @@ export const renderFavorites = async () => {
     }
 }
 
-const renderHome = async () => {
+export const renderHome = async () => {
     try {
         const randomGIFs = await loadHomePage();
         q(CONTAINER_SELECTOR).innerHTML = toHomeView(randomGIFs)
@@ -110,7 +110,7 @@ const renderHome = async () => {
     }
 };
 
-const renderAbout = () => {
+export const renderAbout = () => {
     q(CONTAINER_SELECTOR).innerHTML = toAboutView();
 };
 
