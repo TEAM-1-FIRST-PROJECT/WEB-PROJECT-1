@@ -4,17 +4,20 @@ export const toFavoritesView = (favorites) => {
 
   const gifs = favorites.map((gif) => `
  
+  <div class="image-container">
       <img src="${gif.data.images.fixed_height.url}">
+      <div class="button-container">
       <button class="view-trending-details-btn" data-trending-details-id="${gif.data.id}">Gif Details</button>
       ${renderFavoriteStatus(gif.data.id)}
+      </div>
     </div>
     
   `).join('');
 
     return `
     
-      <div id="favorites">
-        <div class="favorite-view">
+      <div id="trending">
+        <div class="trending-gifs-container">
           ${gifs || '<p>Hearth some GIF to see them here.</p>'} 
         </div>
       </div>
