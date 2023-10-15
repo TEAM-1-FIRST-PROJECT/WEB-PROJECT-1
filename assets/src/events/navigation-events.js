@@ -49,11 +49,15 @@ export const loadPage = (page = '') => {
 export const renderUpload = () => {
     q(CONTAINER_SELECTOR).innerHTML = toUploadForm();
 }
-const renderUploadedGifs = async () => {   
-    const uploadedGifs = getUploadedGifs(); 
-    const gifs = await Promise.all(uploadedGifs.map(id => loadSingleGif(id)));
-    q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(gifs);
-  };
+const renderUploadedGifs = async () => {
+    const uploadedGifs = getUploadedGifs();
+    try {
+        const gifs = await Promise.all(uploadedGifs.map(id => loadSingleGif(id)));
+        q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(gifs);
+    } catch (error) {
+        console.error(error.message)
+    }
+};
 
 export const renderTrending = async () => {
     try {
