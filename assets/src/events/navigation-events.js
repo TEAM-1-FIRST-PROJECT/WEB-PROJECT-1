@@ -46,12 +46,26 @@ export const loadPage = (page = '') => {
     }
 
 };
+
+/**
+ * Renders an upload form in the specified container.
+ * @returns {void}
+ */
 export const renderUpload = () => {
     q(CONTAINER_SELECTOR).innerHTML = toUploadForm();
 }
+
+/**
+ * Renders uploaded GIFs in the specified container.
+ * @async
+ * @returns {<void>}
+ * @throws {Error} If there is an error while rendering the GIFs.
+ */
 const renderUploadedGifs = async () => {
+    /** @type {[string]} */
     const uploadedGifs = getUploadedGifs();
     try {
+        /** @type {Promise<any>[]} */
         const gifs = await Promise.all(uploadedGifs.map(id => loadSingleGif(id)));
         q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(gifs);
     } catch (error) {
