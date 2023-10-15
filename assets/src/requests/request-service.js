@@ -43,6 +43,13 @@ export const loadSingleGif = async (id) => {
     }
 }
 
+/**
+ * Asynchronously loads a list of trending GIFs from the Giphy API.
+ * @async
+ * @function
+ * @returns {Promise} A promise that resolves with the trending GIFs data.
+ * @throws {Error} Throws if there is an error while fetching or parsing the response.
+ */
 export const loadTrendingGif = async () => {
 
     try {
@@ -65,6 +72,14 @@ export const loadGifDetails = async (id) => {
     }
 }
 
+/**
+ * Asynchronously loads a list of GIFs from the Giphy API based on a search query.
+ * @async
+ * @function
+ * @param {string} searchTerm The search query used to find GIFs.
+ * @returns {Promise} A promise that resolves with the GIFs data matching the search query.
+ * @throws {Error} Throws if there is an error while fetching or parsing the response.
+ */
 export const loadSearchGif = async (searchTerm) => {
     try {
         const loadSearchGifURL = `${BASE_URL}/search?q=${searchTerm}&api_key=${API_KEY}&limit=12`;
