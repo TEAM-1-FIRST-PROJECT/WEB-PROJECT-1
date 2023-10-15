@@ -4,6 +4,7 @@ import { toggleFavoriteStatus } from './src/events/favorite-events.js';
 import { renderTrending, renderUpload, loadPage, renderGifDetails } from './src/events/navigation-events.js';
 import { renderSearchItems } from './src/events/search-events.js';
 import { uploadNewGif } from './src/requests/request-service.js';
+import { renderFavorites } from './src/events/navigation-events.js';
 document.addEventListener('DOMContentLoaded', () => {
 
   // add global listener
@@ -27,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // toggle favorite event
     if (e.target.classList.contains('favorite')) {
       toggleFavoriteStatus(e.target.getAttribute('data-gif-id'));
+    } if (document.body.textContent.includes('Favorites GIFs')){
+      renderFavorites();
     }
 
   });

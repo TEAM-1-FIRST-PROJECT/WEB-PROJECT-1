@@ -89,7 +89,7 @@ export const renderTrending = async () => {
     }
 }
 
-const renderFavorites = async () => {
+export const renderFavorites = async () => {
 
     const favorites = getFavorites();
 
