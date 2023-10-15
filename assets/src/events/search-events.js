@@ -4,5 +4,5 @@ import { toSearchView } from "../views/search-view.js";
 import { q } from "./helpers.js";
 export const renderSearchItems = (searchTerm) => {
     loadSearchGif(searchTerm)
-    q(CONTAINER_SELECTOR).innerHTML = toSearchView();
-}
+        .then(gifs => q(CONTAINER_SELECTOR).innerHTML = toSearchView(gifs.data, searchTerm));
+};

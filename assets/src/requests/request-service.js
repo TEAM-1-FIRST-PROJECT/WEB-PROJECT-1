@@ -51,6 +51,12 @@ export const loadGifDetails = async (id) => {
     }
 }
 
-export const loadSearchGif = () => {
-
+export const loadSearchGif = async (searchTerm) => {
+    try {
+        const loadSearchGifURL = `${BASE_URL}/search?q=${searchTerm}&api_key=${API_KEY}&limit=12`;
+        const response = await fetch(loadSearchGifURL);
+        return response.json();
+    } catch (error) {
+        console.log(error.message);
+    }
 }
