@@ -10,8 +10,17 @@ export const uploadNewGif = () => {
     return uploadGif();
 }
 
+/**
+ * Loads a collection of GIFs.
+ * @returns {Promise<Object>} A promise that resolves with the GIFs data.
+ * @throws {Error} If there is an error while fetching the GIFs.
+ */
 export const loadHomePage = async () => {
-    const url = `${BASE_URL}/search?q=monday&api_key=${API_KEY}&limit=5` //`${BASE_URL}/${id}?api_key=${API_KEY}&rating=g`
+    const today = new Date();
+    const dayOfWeek = today.getDay();
+    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const dayName = daysOfWeek[dayOfWeek];
+    const url = `${BASE_URL}/search?q=${dayName}&api_key=${API_KEY}&limit=30` //`${BASE_URL}/${id}?api_key=${API_KEY}&rating=g`
     try {
         return (await fetch(url)).json();
     } catch (error) {
