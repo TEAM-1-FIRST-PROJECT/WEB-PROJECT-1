@@ -306,8 +306,7 @@ img {
 }
 
 .favorite {
-  position: absolute;
-  bottom: 0;
+    bottom: 0;
   /* Position at the bottom of the container */
   right: 0;
   /* Position at the left of the container */
@@ -332,12 +331,6 @@ img {
   grid-template-rows: masonry;
 }
 
-.trending-gifs-container {
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  grid-template-rows: masonry;
-}
 /* End uploaded GIFs styles */
 
 /*upload form*/

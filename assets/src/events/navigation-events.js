@@ -67,6 +67,7 @@ const renderUploadedGifs = async () => {
     try {
         /** @type {Promise<any>[]} */
         const gifs = await Promise.all(uploadedGifs.map(id => loadSingleGif(id)));
+
         q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(gifs);
     } catch (error) {
         console.error(error.message)
@@ -87,19 +88,16 @@ const renderFavorites = async () => {
     
     try {
         const result = await Promise.all(favorites.map(id => loadSingleGif(id)));
-        q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(result)
+        q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(result)          ////////???????
     } catch (error) {
         console.error(error);
     }
-
-
-
 }
 
 const renderHome = async () => {
     try {
         const randomGIFs = await loadHomePage();
-        q(CONTAINER_SELECTOR).innerHTML = toHomeView(randomGIFs)
+        q(CONTAINER_SELECTOR).innerHTML = toHomeView(randomGIFs)        
     } catch (error) {
 console.error(error.message)
     }

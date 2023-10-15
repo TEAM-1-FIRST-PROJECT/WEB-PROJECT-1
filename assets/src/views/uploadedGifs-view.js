@@ -4,6 +4,7 @@ import { renderFavoriteStatus } from "../events/helpers.js";
  * @returns {void}
  */
 export const toUploadedGifsView = (uploaded) => {
+  console.log(uploaded)
   const gifs = uploaded.map((gif) => `
   
     <div class="uploaded-gif">
