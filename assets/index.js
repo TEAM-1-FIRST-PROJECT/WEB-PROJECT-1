@@ -16,8 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // show category events
     if (e.target.classList.contains('view-trending-details-btn')) {
-      debugger;
-      console.log(e.target.getAttribute('data-trending-details-id'));
       renderGifDetails(e.target.getAttribute('data-trending-details-id'));
     }
 

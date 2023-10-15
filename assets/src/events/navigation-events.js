@@ -9,7 +9,7 @@ import { q, setActiveNav } from './helpers.js';
 import { toUploadForm } from '../views/uploadForm-view.js';
 import { getUploadedGifs } from '../data/uploadedGifs.js';
 import { toUploadedGifsView } from '../views/uploadedGifs-view.js';
-
+import { toGifDetailsView } from '../views/gif-details-view.js';
 
 /**
  * Loads and renders the specified page based on the provided page name.
@@ -76,7 +76,6 @@ const renderUploadedGifs = async () => {
 export const renderTrending = async () => {
     try {
         const trendingGIFs = await loadTrendingGif();
-        console.log(trendingGIFs);
         q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trendingGIFs);
     } catch (error) {
         console.error(error.message);
@@ -97,7 +96,8 @@ const renderAbout = () => {
 export const renderGifDetails = async (id = null) => {
     try {
         const gifDetails = await loadGifDetails(id);
-        q(CONTAINER_SELECTOR).innerHTML = (gifDetails);
+        console.log(gifDetails);
+        q(CONTAINER_SELECTOR).innerHTML = toGifDetailsView(gifDetails);
 
     } catch (error) {
         console.error(error);

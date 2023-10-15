@@ -2,7 +2,7 @@ export const toTrendingView = (trending) => {
     const gifs = trending.data.map((gif) => `
     <div class="trending-gif">
       <img src="${gif.images.fixed_height.url}">
-      <a href="#" class="favorite" data-movie-id="${gif.id}">Add to Favorites</a>
+      <button class="view-trending-details-btn" data-trending-details-id="${gif.id}">Gif Details</button>
     </div>
   `).join('');
   
