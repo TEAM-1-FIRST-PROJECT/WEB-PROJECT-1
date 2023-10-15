@@ -74,6 +74,12 @@ const renderUploadedGifs = async () => {
     }
 };
 
+/**
+ * Asynchronously renders a list of trending GIFs.
+ * @async
+ * @function
+ * @throws {Error} Throws if there is an error while rendering the trending GIFs.
+ */
 export const renderTrending = async () => {
     try {
         const trendingGIFs = await loadTrendingGif();
@@ -82,6 +88,7 @@ export const renderTrending = async () => {
         console.error(error.message);
     }
 }
+
 const renderFavorites = async () => {
   
     const favorites = getFavorites();
