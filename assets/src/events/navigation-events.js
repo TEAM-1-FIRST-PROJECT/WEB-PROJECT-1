@@ -1,17 +1,21 @@
-import { UPLOAD, TRENDING, HOME, FAVORITES, ABOUT, CONTAINER_SELECTOR } from '../common/constants.js';
-import { loadTrendingGif, loadGifDetails } from '../requests/request-service.js';
+import { UPLOAD, UPLOADED, TRENDING, HOME, FAVORITES, ABOUT, CONTAINER_SELECTOR } from '../common/constants.js';
+import { loadTrendingGif, loadGifDetails, loadSingleGif } from '../requests/request-service.js';
 import { toAboutView } from '../views/about-view.js';
 import { toHomeView } from '../views/home-view.js';
 import { toTrendingView } from '../views/trending-view.js';
 import { toFavoritesView } from '../views/favorite-view.js';
 import { getFavorites } from '../data/favorites.js';
 import { q, setActiveNav } from './helpers.js';
-import { toGifDetailsView } from '../views/gif-details-view.js';
+import { toUploadForm } from '../views/uploadForm-view.js';
+import { getUploadedGifs } from '../data/uploadedGifs.js';
+import { toUploadedGifsView } from '../views/uploadedGifs-view.js';
 
 
-
-
-
+/**
+ * Loads and renders the specified page based on the provided page name.
+ * @param {string} [page=''] - The name of the page to be loaded.
+ * @returns {void|null} Returns `void` if a valid page is loaded, otherwise `null`.
+ */
 export const loadPage = (page = '') => {
 
     switch (page) {
@@ -24,25 +28,50 @@ export const loadPage = (page = '') => {
             setActiveNav(TRENDING);
             return renderTrending();
 
-        case UPLOAD:
-            setActiveNav(UPLOAD);
-            return renderUpload();
-
         case FAVORITES:
             setActiveNav(FAVORITES);
             return renderFavorites();
 
+        case UPLOAD:
+            setActiveNav(UPLOAD);
+            return renderUpload();
+
+        case UPLOADED:
+            setActiveNav(UPLOADED);
+            return renderUploadedGifs();
+
         case ABOUT:
             setActiveNav(ABOUT);
             return renderAbout();
-
-        default: return null; 
+        default: return null;
     }
-
 };
-export const renderUpload = () => {
 
+/**
+ * Renders an upload form in the specified container.
+ * @returns {void}
+ */
+export const renderUpload = () => {
+    q(CONTAINER_SELECTOR).innerHTML = toUploadForm();
 }
+
+/**
+ * Renders uploaded GIFs in the specified container.
+ * @async
+ * @returns {<void>}
+ * @throws {Error} If there is an error while rendering the GIFs.
+ */
+const renderUploadedGifs = async () => {
+    /** @type {[string]} */
+    const uploadedGifs = getUploadedGifs();
+    try {
+        /** @type {Promise<any>[]} */
+        const gifs = await Promise.all(uploadedGifs.map(id => loadSingleGif(id)));
+        q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(gifs);
+    } catch (error) {
+        console.error(error.message)
+    }
+};
 
 export const renderTrending = async () => {
     try {
@@ -68,11 +97,10 @@ const renderAbout = () => {
 export const renderGifDetails = async (id = null) => {
     try {
         const gifDetails = await loadGifDetails(id);
-        console.log(gifDetails);
-        q(CONTAINER_SELECTOR).innerHTML = toGifDetailsView(gifDetails);
-        
+        q(CONTAINER_SELECTOR).innerHTML = (gifDetails);
+
     } catch (error) {
         console.error(error);
     }
-    
-  };
+
+};
