@@ -11,7 +11,7 @@ export const uploadNewGif = () => {
 }
 
 export const loadHomePage = async () => {
-    const url = `http://api.giphy.com/v1/gifs/search?q=mondey&api_key=${API_KEY}&limit=5` //`${BASE_URL}/${id}?api_key=${API_KEY}&rating=g`
+    const url = `${BASE_URL}/search?q=monday&api_key=${API_KEY}&limit=5` //`${BASE_URL}/${id}?api_key=${API_KEY}&rating=g`
     try {
         return (await fetch(url)).json();
     } catch (error) {
