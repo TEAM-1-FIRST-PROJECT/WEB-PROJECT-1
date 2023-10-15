@@ -296,17 +296,21 @@ img {
   max-width: 100%; /* Make sure the image fits within its container */
 }
 
-.uploaded {
+.uploaded-gif {
+  position: relative; /* Container needs to be positioned */
+}
+
+.favorite {
   position: absolute;
   bottom: 0; /* Position at the bottom of the container */
   left: 0; /* Position at the left of the container */
-  background-color: rgba(230, 215, 215, 0.8); /* Semi-transparent background for better readability */
+  background-color: rgba(212, 203, 203, 0.8); /* Semi-transparent background for better readability */
   padding: 5px; /* Some padding for the link */
-  text-decoration: none; /* Remove underline for the link */
 }
 
-.uploaded:hover {
-  background-color: rgb(22, 11, 11); /* Change background color on hover */
+.favorite:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Change background color on hover */
   color: white; /* Change text color on hover */
 }
+
 /* End uploaded GIFs styles */
