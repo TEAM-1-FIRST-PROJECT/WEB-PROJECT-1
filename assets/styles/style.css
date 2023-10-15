@@ -306,7 +306,7 @@ img {
 }
 
 .favorite {
-    bottom: 0;
+  bottom: 0;
   /* Position at the bottom of the container */
   right: 0;
   /* Position at the left of the container */
@@ -328,7 +328,7 @@ img {
   display: grid;
   gap: 30px;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  grid-template-rows: masonry;
+  grid-template-rows: repeat(auto-fill, minmax(120px, 1fr));
 }
 
 /* End uploaded GIFs styles */
@@ -339,10 +339,12 @@ img {
 
 /* Styles for the form container */
 .form-container {
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for better readability */
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Semi-transparent background for better readability */
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Drop shadow for the container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  /* Drop shadow for the container */
 }
 
 /* Styles for the form */
@@ -355,8 +357,10 @@ img {
 
 /* Styles for the custom file input button */
 .custom-file-input {
-  background-color: #007BFF; /* Button background color */
-  color: white; /* Button text color */
+  background-color: #007BFF;
+  /* Button background color */
+  color: white;
+  /* Button text color */
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -365,13 +369,16 @@ img {
 }
 
 .custom-file-input:hover {
-  background-color: #0056b3; /* Button background color on hover */
+  background-color: #0056b3;
+  /* Button background color on hover */
 }
 
 /* Styles for the submit button */
 .submit {
-  background-color: #28a745; /* Button background color */
-  color: white; /* Button text color */
+  background-color: #28a745;
+  /* Button background color */
+  color: white;
+  /* Button text color */
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -380,7 +387,8 @@ img {
 }
 
 .submit:hover {
-  background-color: #218838; /* Button background color on hover */
+  background-color: #218838;
+  /* Button background color on hover */
 }
 
 /* End upload form*/

@@ -90,9 +90,9 @@ export const renderTrending = async () => {
 }
 
 const renderFavorites = async () => {
-  
+
     const favorites = getFavorites();
-    
+
     try {
         const result = await Promise.all(favorites.map(id => loadSingleGif(id)));
         q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(result)          ////////???????
@@ -104,9 +104,9 @@ const renderFavorites = async () => {
 const renderHome = async () => {
     try {
         const randomGIFs = await loadHomePage();
-        q(CONTAINER_SELECTOR).innerHTML = toHomeView(randomGIFs)        
+        q(CONTAINER_SELECTOR).innerHTML = toHomeView(randomGIFs)
     } catch (error) {
-console.error(error.message)
+        console.error(error.message)
     }
 };
 
@@ -117,11 +117,9 @@ const renderAbout = () => {
 export const renderGifDetails = async (id = null) => {
     try {
         const gifDetails = await loadGifDetails(id);
-        console.log(gifDetails);
         q(CONTAINER_SELECTOR).innerHTML = toGifDetailsView(gifDetails);
 
     } catch (error) {
         console.error(error);
     }
-
 };
