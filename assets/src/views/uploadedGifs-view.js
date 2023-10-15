@@ -1,3 +1,4 @@
+import { renderFavoriteStatus } from "../events/helpers.js";
 /**
  * Renders an uploaded GIFs in the specified container.
  * @returns {void}
@@ -6,7 +7,7 @@ export const toUploadedGifsView = (uploaded) => {
   const gifs = uploaded.map((gif) => `
     <div class="uploaded-gif">
       <img src="${gif.data.images.fixed_height.url}">
-      <a href="#" class="uploaded" uploaded-id="${gif.data.id}">Add to Favorites</a>
+      ${renderFavoriteStatus(gif.data.id)}
     </div>
   `).join('');
 
