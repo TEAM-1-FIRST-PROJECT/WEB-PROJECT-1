@@ -26,7 +26,7 @@ html, body {
   
   header {
     grid-area: header;
-    height: 200px;
+    height: 60px;
     /*background: url('../images/banner-top.png');*/
   }
   

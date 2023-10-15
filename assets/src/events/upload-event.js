@@ -1,4 +1,5 @@
 import { addUploadedGifs } from "../data/uploadedGifs.js";
+import { UPLOAD_URL, API_KEY } from "../common/constants.js";
 
 export const uploadGif = () => { 
   document.getElementById('uploadForm').addEventListener('submit', async (event)=>{
@@ -7,7 +8,7 @@ export const uploadGif = () => {
     const formData = new FormData();
     const fileInput = document.getElementById('inputGif');
     formData.append('file', fileInput.files[0]);
-    const url = 'https://upload.giphy.com/v1/gifs?api_key=7vv6tDTalN9b6qJzUPnOQpz98o3Rnrgp';
+    const url = UPLOAD_URL + API_KEY;
   
     try {
       const response = await fetch(url, {
@@ -15,15 +16,15 @@ export const uploadGif = () => {
         body: formData,
       });      
       if (response.ok) {
-        const data = await response.json();console.log(data);
+        const data = await response.json();
         document.getElementById('uploadForm').innerHTML = `GIF uploaded successfully. ID: ${data.data.id}`;
         addUploadedGifs(data.data.id);
       } else {
-        throw new Error('Failed to upload GIF');
+        document.getElementById('uploadForm').innerHTML = 'Failed to upload GIF';
       }
     } catch (error) {
       console.error(error);
-      document.getElementById('uploadStatus').innerHTML = 'Error uploading GIF';
+      document.getElementById('uploadForm').innerHTML = 'Error uploading GIF';
     }
   });
 };
