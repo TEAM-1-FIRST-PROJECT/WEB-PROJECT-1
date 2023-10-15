@@ -11,8 +11,7 @@ export const toHomeView = (trending) => {
   `).join('');
 
   return `
-  <div id="trending">
-    <h1>mysterious GIFs</h1>     
+  <div id="trending">   
     <div class="trending-gifs-container">
       ${gifs}
     </div>

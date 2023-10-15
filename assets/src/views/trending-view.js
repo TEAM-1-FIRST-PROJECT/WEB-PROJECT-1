@@ -12,8 +12,7 @@ export const toTrendingView = (trending) => {
   `).join('');
   
   return `
-    <div id="trending">
-      <h1>Trending GIFs</h1>     
+    <div id="trending">  
       <div class="trending-gifs-container">
       ${gifs}
       </div>
