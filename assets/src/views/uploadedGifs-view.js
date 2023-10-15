@@ -1,10 +1,12 @@
-import { renderFavoriteStatus } from "../events/helpers.js";
+import { renderFavoriteStatus } from "../events/favorite-events.js";
 /**
  * Renders an uploaded GIFs in the specified container.
  * @returns {void}
  */
 export const toUploadedGifsView = (uploaded) => {
-  const gifs = uploaded.map((gif) => ` 
+
+  const gifs = uploaded.map((gif) => `
+  
     <div class="uploaded-gif">
       <img src="${gif.data.images.fixed_height.url}">
       <button class="view-trending-details-btn" data-trending-details-id="${gif.id}">Gif Details</button>

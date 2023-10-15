@@ -1,4 +1,4 @@
-import { renderFavoriteStatus } from "../events/helpers.js";
+import { renderFavoriteStatus } from "../events/favorite-events.js";
 
 export const toHomeView = (trending) => {
   const gifs = trending.data.map((gif) => `

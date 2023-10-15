@@ -95,7 +95,7 @@ const renderFavorites = async () => {
 
     try {
         const result = await Promise.all(favorites.map(id => loadSingleGif(id)));
-        q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(result)          ////////???????
+        q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(result)          ////////???????
     } catch (error) {
         console.error(error);
     }
