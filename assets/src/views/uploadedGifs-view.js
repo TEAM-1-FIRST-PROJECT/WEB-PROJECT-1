@@ -6,7 +6,7 @@ export const toUploadedGifsView = (uploaded) => {
   const gifs = uploaded.map((gif) => `
     <div class="uploaded-gif">
       <img src="${gif.data.images.fixed_height.url}">
-      <a href="#" class="uploaded" data-movie-id="${gif.data.id}">Add to Favorites</a>
+      <a href="#" class="uploaded" uploaded-id="${gif.data.id}">Add to Favorites</a>
     </div>
   `).join('');
 
