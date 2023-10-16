@@ -99,8 +99,7 @@ span {
 }
 
 .trending-gifs-container,
-.uploaded-gifs-container
-.searched-gif-result {
+.uploaded-gifs-container .searched-gif-result {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -434,7 +433,7 @@ img {
 
 .form {
   text-align: center;
-  padding-top: 5%;
+  padding-top: 6%;
   text-size-adjust: 10;
 }
 
@@ -460,14 +459,12 @@ img {
 
 /* Styles for the submit button */
 .submit,
-.text {
-  width: 350px; /* Set the width to your desired size */
-  height: 35px; /* Set the height to your desired size */
-  
+.input-text {
+  margin: 0.5%;
+  width: 350px;
+  height: 35px;
   background-color: #84dd99;
-  /* Button background color */
   color: white;
-  /* Button text color */
   padding: 10px 20px;
   border: none;
   border-radius: 2px;
@@ -479,10 +476,13 @@ img {
   background-color: #218838;
   /* Button background color on hover */
 }
+.upload-form-message {
+  padding-top: 2%;
+  font-size: 30px;
+}
 
 
-
-#search > div {
+#search>div {
   display: grid;
   grid-template-columns: repeat(5, 1fr); 
   gap: 10px; 
