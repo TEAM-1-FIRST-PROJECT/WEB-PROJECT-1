@@ -9,8 +9,8 @@
   outline: none;
   scroll-behavior: auto;
   font-family: 'Poppins', sans-serif;
-margin-bottom: 2.8rem;
-/* background: linear-gradient(135deg,#ff00d2,#fed90f,#00a2ff,#09f1b8,#ff00d2,#fed90f,#00a2ff,#09f1b8);
+  margin-bottom: 2.8rem;
+  /* background: linear-gradient(135deg,#ff00d2,#fed90f,#00a2ff,#09f1b8,#ff00d2,#fed90f,#00a2ff,#09f1b8);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 background-size: 300% 300%;
@@ -62,23 +62,26 @@ header {
   font-size: 2.5rem;
   font-weight: 600;
   cursor: pointer;
-  background: linear-gradient(135deg,--background-color,--sec-background-color,--third-background-color,--fourth-background-color,--background-color,--sec-background-color,--third-background-color,--fourth-background-color);
+  background: linear-gradient(135deg, --background-color, --sec-background-color, --third-background-color, --fourth-background-color, --background-color, --sec-background-color, --third-background-color, --fourth-background-color);
 
   background-size: 300% 300%;
   animation: gradient 8s ease-in-out infinite;
 }
+
 @keyframes gradient {
 
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
-  
+
 }
 
 
@@ -102,7 +105,11 @@ header {
   display: none;
 }
 
-/* #container {
+#container {
+  margin-top: 7%;
+}
+
+/*
   flex: 1 1 30rem;
   background: var(--second-bg-color);
   padding: 3rem 2rem 4rem;
@@ -128,25 +135,28 @@ span {
 
 .logo {
   margin-top: 2.5rem;
- font-size: 3rem;
-  background: linear-gradient(135deg,#ff00d2,#fed90f,#00a2ff,#09f1b8,#ff00d2,#fed90f,#00a2ff,#09f1b8);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-size: 300% 300%;
-animation: gradient 8s ease-in-out infinite;
+  font-size: 3rem;
+  background: linear-gradient(135deg, #ff00d2, #fed90f, #00a2ff, #09f1b8, #ff00d2, #fed90f, #00a2ff, #09f1b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% 300%;
+  animation: gradient 8s ease-in-out infinite;
 }
+
 @keyframes gradient {
 
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
-  
+
 }
 
 
@@ -159,8 +169,8 @@ animation: gradient 8s ease-in-out infinite;
 
 .trending-gifs-container .image-container {
   position: relative;
-    overflow: hidden;
-    display: flex;
+  overflow: hidden;
+  display: flex;
 }
 
 .image-container {
@@ -169,25 +179,25 @@ animation: gradient 8s ease-in-out infinite;
 }
 
 .image-container:hover img {
-    transform: scale(1.1);
-  
+  transform: scale(1.1);
+
 }
 
 .image-container .button-container {
   position: absolute;
-    bottom: -5rem;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, .1), var(--second-bg-color));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 0 4rem;
-    transform: translateY(100%);
-    transition: .5s ease;
+  bottom: -5rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, .1), var(--second-bg-color));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 4rem;
+  transform: translateY(100%);
+  transition: .5s ease;
 }
 
 .image-container:hover .button-container {
@@ -208,7 +218,7 @@ animation: gradient 8s ease-in-out infinite;
 .animate-background {
   height: 100vh;
   width: 100%;
-  background: linear-gradient(45deg,#d2001a,#7462ff,#f48e21,#23d5ab);
+  background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
   background-size: 300% 300%;
   animation: color 12s ease-in-out infinite;
 }
@@ -217,9 +227,11 @@ animation: gradient 8s ease-in-out infinite;
   0% {
     background-position: 0 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0 50%;
   }
@@ -323,144 +335,6 @@ span.favorite.active {
 /* End homepage styles */
 
 
-/* Categories styles */
-
-#categories {
-  padding: 50px;
-}
-
-#categories h1 {
-  color: rgb(187, 135, 255);
-}
-
-#categories div.content {
-  font-size: 1.25em;
-}
-
-div.category {
-  display: inline-block;
-  width: 20%;
-  margin: 1%;
-  padding: 1%;
-  border: 1px solid rgb(97, 71, 97);
-  border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(2px);
-  text-align: center;
-}
-
-#categories button {
-  font-size: 20px;
-  padding: 5px;
-  color: rgb(187, 135, 255);
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 1px solid black;
-  cursor: pointer;
-}
-
-#categories button:hover {
-  color: white;
-}
-
-/* End categories styles */
-
-
-/* Movies styles */
-
-#movies {
-  padding: 50px;
-}
-
-#movies h1 {
-  color: rgb(187, 135, 255);
-}
-
-#movies div.content {
-  font-size: 1.25em;
-  text-align: center;
-}
-
-div.movie {
-  display: inline-block;
-  width: 20%;
-  margin: 1%;
-  padding: 1%;
-  border: 1px solid rgb(97, 71, 97);
-  border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(2px);
-  text-align: center;
-}
-
-div.movie h1 {
-  font-size: 1.5em;
-  margin: 5px;
-}
-
-div.movie h2 {
-  font-size: 1.25em;
-  margin: 5px;
-}
-
-div.movie img {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-#movies button {
-  font-size: 20px;
-  padding: 5px;
-  color: rgb(222, 113, 255);
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 1px solid black;
-  cursor: pointer;
-}
-
-#movies button:hover {
-  color: white;
-}
-
-/* Single movie styles */
-
-div.movie-detailed {
-  padding: 20px;
-  border: 1px solid rgb(97, 71, 97);
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(2px);
-  display: table;
-  width: 100%;
-}
-
-div.movie-detailed p {
-  font-size: 1.25em;
-  color: #eee;
-}
-
-div.movie-detailed div.poster {
-  width: 30%;
-  display: table-cell;
-  padding: 20px;
-  margin: 10px;
-  border-right: 1px solid rgb(112, 112, 112);
-}
-
-div.movie-detailed div.poster img {
-  width: 100%;
-}
-
-div.movie-detailed div.movie-info {
-  padding: 20px;
-  margin: 10px;
-  vertical-align: top;
-  display: table-cell;
-  text-align: left;
-  width: 70%;
-  /* height: 100%; */
-}
-
-/* End movies styles */
-
-
 /* About styles */
 
 #about {
@@ -534,7 +408,7 @@ img {
 /* Styles for the entire page */
 
 
-/* Styles for the form container */
+/* Styles for the form*/
 .form-container {
   background-color: rgba(255, 255, 255, 0.8);
   /* Semi-transparent background for better readability */
@@ -544,13 +418,22 @@ img {
   /* Drop shadow for the container */
 }
 
-/* Styles for the form */
+/* .formDiv {
+  display: flex; 
+  align-items: center;
+  margin-top: 5rem;
+  padding-bottom: 300px;
+  padding-top: 300px;
+} */
+
+
 .form {
   text-align: center;
+  padding-top: 5%;
+  text-size-adjust: 10;
 }
 
-/* Styles for the file input */
-
+/* End for the form */
 
 /* Styles for the custom file input button */
 .custom-file-input {
@@ -573,6 +456,9 @@ img {
 /* Styles for the submit button */
 .submit,
 .text {
+  width: 350px; /* Set the width to your desired size */
+  height: 35px; /* Set the height to your desired size */
+  
   background-color: #84dd99;
   /* Button background color */
   color: white;
@@ -589,12 +475,6 @@ img {
   /* Button background color on hover */
 }
 
-.formDiv {
-  /* display: flex; */
-  align-items: center;
-  margin-top: 5rem;
-  padding-bottom: 300px;
-  padding-top: 300px;
-}
+
 
 /* End upload form*/
