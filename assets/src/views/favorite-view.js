@@ -18,7 +18,7 @@ export const toFavoritesView = (favorites) => {
     
       <div id="trending">
         <div class="trending-gifs-container">
-          ${gifs || '<p>Hearth some GIF to see them here.</p>'} 
+          ${gifs || '<p>Heart some GIF to see them here.</p>'} 
         </div>
       </div>
     `
