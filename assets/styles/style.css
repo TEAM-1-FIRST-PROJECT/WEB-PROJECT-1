@@ -500,8 +500,9 @@ img {
   align-items: center;
   box-shadow: 0 0 20px #BD93F9;
   margin-top: 250px;
-  margin-bottom: 300px;
+  margin-bottom: 250px;
   margin-left: 450px;
+  /* margin: 30%; */
   background-color: rgba(128, 0, 128, 0.3);
   max-width: 600px;
   width: 100%;
