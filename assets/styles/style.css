@@ -100,428 +100,426 @@ span {
 }
 
 .trending-gifs-container,
-.uploaded-gifs-container .searched-gif-result 
-  .uploaded-gifs-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: .5s ease;
-    margin-top: 4.5rem;
+.uploaded-gifs-container .searched-gif-result .uploaded-gifs-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: .5s ease;
+  margin-top: 4.5rem;
+}
+
+.logo {
+  font-size: 3rem;
+  background: linear-gradient(135deg, #ff00d2, #fed90f, #00a2ff, #09f1b8, #ff00d2, #fed90f, #00a2ff, #09f1b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% 300%;
+  animation: gradient 8s ease-in-out infinite;
+}
+
+
+@keyframes gradient {
+
+  0% {
+    background-position: 0% 50%;
   }
 
-  .logo {
-    font-size: 3rem;
-    background: linear-gradient(135deg, #ff00d2, #fed90f, #00a2ff, #09f1b8, #ff00d2, #fed90f, #00a2ff, #09f1b8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 300% 300%;
-    animation: gradient 8s ease-in-out infinite;
+  50% {
+    background-position: 100% 50%;
   }
 
-
-  @keyframes gradient {
-
-    0% {
-      background-position: 0% 50%;
-    }
-
-    50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 0% 50%;
-    }
-
+  100% {
+    background-position: 0% 50%;
   }
 
+}
 
-  .animate-background {
-    height: 100vh;
-    width: 100%;
-    background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
-    background-size: 300% 300%;
-    animation: color 12s ease-in-out infinite;
+
+.animate-background {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
+  background-size: 300% 300%;
+  animation: color 12s ease-in-out infinite;
+}
+
+@keyframes color {
+  0% {
+    background-position: 0 50%;
   }
 
-  @keyframes color {
-    0% {
-      background-position: 0 50%;
-    }
-
-    50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 0 50%;
-    }
+  50% {
+    background-position: 100% 50%;
   }
 
+  100% {
+    background-position: 0 50%;
+  }
+}
 
-  .image-container {
-    max-width: 500px;
-    margin: 0 auto;
-    margin-top: 100px;
-    z-index: 1;
+
+.image-container {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 100px;
+  z-index: 1;
+}
+
+.image-container>img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
   }
 
-  .image-container>img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    animation: pulse 2s infinite;
+  50% {
+    transform: scale(1.10);
   }
 
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-
-    50% {
-      transform: scale(1.10);
-    }
-
-    100% {
-      transform: scale(1);
-    }
+  100% {
+    transform: scale(1);
   }
+}
 
 
-  footer {
-    grid-area: footer;
-    padding: 10px;
-    text-align: center;
-    color: var(--bg-color);
-    font-size: 1.5rem;
-  }
+footer {
+  grid-area: footer;
+  padding: 10px;
+  text-align: center;
+  color: var(--bg-color);
+  font-size: 1.5rem;
+}
 
-  .hidden {
-    display: none;
-  }
+.hidden {
+  display: none;
+}
 
-  a.active {
-    color: white;
-    font-weight: bold;
-  }
+a.active {
+  color: white;
+  font-weight: bold;
+}
 
-  input#search {
+input#search {
 
-    font-size: 2.5rem;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    border: 0.2rem solid var(--text-color);
-    border-radius: 4px;
-    height: 3.5rem;
-    flex: 1 0;
-    margin: 1rem;
-    background: linear-gradient(135deg, #ff00d2, #fed90f, #00a2ff, #09f1b8, #ff00d2, #fed90f, #00a2ff, #09f1b8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 300% 300%;
-    animation: gradient 8s ease-in-out infinite;
-  }
-
-
-
-  /* End template styling */
+  font-size: 2.1rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: 0.2rem solid var(--text-color);
+  border-radius: 4px;
+  height: 2.7rem;
+  flex: 1 0;
+  margin: 1rem;
+  background: linear-gradient(135deg, #ff00d2, #fed90f, #00a2ff, #09f1b8, #ff00d2, #fed90f, #00a2ff, #09f1b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% 300%;
+  animation: gradient 8s ease-in-out infinite;
+}
 
 
 
-  /* Add your styles below */
+/* End template styling */
 
 
-  /* About styles */
 
-  #about {
-    padding: 50px;
-  }
+/* Add your styles below */
 
 
-  #about h1 {
-    color: white;
-    margin-bottom: 50px;
-    font-size: 25pt;
-  }
+/* About styles */
 
-  #about h2 {
-    color: rgb(229, 210, 255);
-    font-size: 15pt;
-  }
+#about {
+  padding: 50px;
+}
 
-  /* #about > div > ul {
+
+#about h1 {
+  color: white;
+  margin-bottom: 50px;
+  font-size: 25pt;
+}
+
+#about h2 {
+  color: rgb(229, 210, 255);
+  font-size: 15pt;
+}
+
+/* #about > div > ul {
   align-items: center;
   list-style-type: circle;
 } */
 
-  /* End about styles */
+/* End about styles */
 
-  /* Uploaded GIFs styles */
-  .uploaded-gif {
-    position: relative;
-    /* Container needs to be positioned */
-  }
+/* Uploaded GIFs styles */
+.uploaded-gif {
+  position: relative;
+  /* Container needs to be positioned */
+}
 
-  .image-container {
-    position: relative;
-    /* Image container needs to be positioned */
-  }
+.image-container {
+  position: relative;
+  /* Image container needs to be positioned */
+}
 
-  img {
-    display: block;
-    /* Ensure the image is a block element */
-    max-width: 100%;
-    /* Make sure the image fits within its container */
-  }
+img {
+  display: block;
+  /* Ensure the image is a block element */
+  max-width: 100%;
+  /* Make sure the image fits within its container */
+}
 
-  .uploaded-gif {
-    position: relative;
-    /* Container needs to be positioned */
-  }
-
-
-  .details-view {
-    padding-bottom: 10rem;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 1.2rem;
-  }
-
-  .detail-img {
-    margin: 20rem;
-    align-items: center;
-    border: 0.7rem solid;
-    border-radius: 1rem;
-  }
-
-  #container {
-    align-items: center;
-    text-align: center;
-  }
-
-  .view-trending-details-btn {
-    padding: 4.3px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 5px;
-    margin-top: 1.5px;
-    box-shadow: 0 0 5px white,
-      0 0 25px white;
-    transition: all 0.3s;
-  }
-
-  .view-trending-details-btn:hover {
-    box-shadow: 0 0 5px white,
-      0 0 25 white, 0 0 50px white,
-      0 0 100px white, 0 0 500px white;
-  }
-
-  .favorite {
-    background-color: white;
-    color: black;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    bottom: 0;
-    right: 0;
-    box-shadow: 0 0 5px white,
-      0 0 25px white;
-  }
-
-  .favorite:hover {
-    box-shadow: 0 0 5px white,
-      0 0 25 white, 0 0 50px white,
-      0 0 100px white, 0 0 200px white;
-  }
+.uploaded-gif {
+  position: relative;
+  /* Container needs to be positioned */
+}
 
 
-  .trending-gifs-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.details-view {
+  box-shadow: 0 0 20px #BD93F9;
+  background-color: rgba(128, 0, 128, 0.3);
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 0 10px #BD93F9;
+  margin-left: 30%;
+}
+
+.detail-img {
+  margin: 20rem;
+  
+  border: 0.7rem solid;
+  border-radius: 1rem;
+}
+
+#container {
+  align-items: center;
+  text-align: center;
+}
+
+.view-trending-details-btn {
+  padding: 4.3px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-top: 1.5px;
+  box-shadow: 0 0 5px white,
+    0 0 25px white;
+  transition: all 0.3s;
+}
+
+.view-trending-details-btn:hover {
+  box-shadow: 0 0 5px white,
+    0 0 25 white, 0 0 50px white,
+    0 0 100px white, 0 0 500px white;
+}
+
+.favorite {
+  background-color: white;
+  color: black;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  bottom: 0;
+  right: 0;
+  box-shadow: 0 0 5px white,
+    0 0 25px white;
+}
+
+.favorite:hover {
+  box-shadow: 0 0 5px white,
+    0 0 25 white, 0 0 50px white,
+    0 0 100px white, 0 0 200px white;
+}
 
 
-  }
-
-  .trending-gifs-container .image-container {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-  }
-
-  .image-container {
-    width: 100%;
-    transition: .5s ease;
-  }
-
-  .image-container:hover img {
-    transform: scale(1.1);
-
-  }
-
-  .image-container .button-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    transform: translateY(100%);
-    transition: .5s ease;
-  }
-
-  .image-container:hover .button-container {
-    transform: translateY(0);
-  }
-
-  .view-trending-details-btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-  }
+.trending-gifs-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
 
-  .trending-gifs-container,
-  .uploaded-gifs-container {
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(5, minmax(120px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(120px, 1fr));
-    padding: 2rem;
-  }
+}
 
-  /* End uploaded GIFs styles */
+.trending-gifs-container .image-container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.image-container {
+  width: 100%;
+  transition: .5s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.1);
+
+}
+
+.image-container .button-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  transform: translateY(100%);
+  transition: .5s ease;
+}
+
+.image-container:hover .button-container {
+  transform: translateY(0);
+}
+
+.view-trending-details-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
+.trending-gifs-container,
+.uploaded-gifs-container {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(120px, 1fr));
+  padding: 2rem;
+}
 
-  /* Styles for the form*/
-  .form-container {
-    background-color: rgba(255, 255, 255, 0.8);
-    /* Semi-transparent background for better readability */
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    /* Drop shadow for the container */
-  }
+/* End uploaded GIFs styles */
 
 
 
-
-  .form {
-    text-align: center;
-    padding-top: 6%;
-    text-size-adjust: 10;
-  }
-
-  /* End for the form */
-
-  /* Styles for the custom file input button */
-  .custom-file-input {
-    background-color: #007BFF;
-    /* Button background color */
-    color: white;
-    /* Button text color */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  .custom-file-input:hover {
-    background-color: #0056b3;
-    /* Button background color on hover */
-  }
-
-  /* Styles for the submit button */
-  .submit,
-  .input-text {
-    margin: 0.5%;
-    width: 350px;
-    height: 35px;
-  }
-    .text {
-      width: 350px;
-      /* Set the width to your desired size */
-      height: 35px;
-      /* Set the height to your desired size */
-
-      background-color: #84dd99;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 2px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .submit:hover {
-      background-color: #218838;
-      /* Button background color on hover */
-    }
-
-    .upload-form-message {
-      padding-top: 2%;
-      font-size: 30px;
-    }
+/* Styles for the form*/
+.form-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Semi-transparent background for better readability */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  /* Drop shadow for the container */
+}
 
 
-    #search>div {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
-      justify-content: space-between;
-      padding: 10px;
-      text-align: center;
-    }
 
-    #about {
-      /* display: grid;
+
+.form {
+  text-align: center;
+  padding-top: 6%;
+  text-size-adjust: 10;
+}
+
+/* End for the form */
+
+/* Styles for the custom file input button */
+.custom-file-input {
+  background-color: #007BFF;
+  /* Button background color */
+  color: white;
+  /* Button text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.custom-file-input:hover {
+  background-color: #0056b3;
+  /* Button background color on hover */
+}
+
+/* Styles for the submit button */
+.submit,
+.input-text {
+  margin: 0.5%;
+  width: 350px;
+  height: 35px;
+}
+
+.text {
+  width: 350px;
+  /* Set the width to your desired size */
+  height: 35px;
+  /* Set the height to your desired size */
+
+  background-color: #84dd99;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit:hover {
+  background-color: #218838;
+  /* Button background color on hover */
+}
+
+.upload-form-message {
+  padding-top: 2%;
+  font-size: 30px;
+}
+
+
+#search>div {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  justify-content: space-between;
+  padding: 10px;
+  text-align: center;
+}
+
+#about {
+  /* display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-column-gap: 50px; */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 0 20px #BD93F9;
-      margin-top: 250px;
-      margin-bottom: 250px;
-      margin-left: 450px;
-      /* margin: 30%; */
-      background-color: rgba(128, 0, 128, 0.3);
-      max-width: 600px;
-      width: 100%;
-      box-shadow: 0 0 10px #BD93F9;
-      margin-top: 100px;
-      margin-bottom: 300px;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px #BD93F9;
+  margin: 32%;
+  /* margin: 30%; */
+  background-color: rgba(128, 0, 128, 0.3);
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 0 10px #BD93F9;
+  margin-top: 270px;
+  margin-bottom: 270px;
+}
 
-    #about #container {
-      border-radius: 8px;
-      padding: 20px;
-    }
+#about #container {
+  border-radius: 8px;
+  padding: 20px;
+}
 
-    #about .content {
-      grid-column: 1;
-      padding-left: 30px;
-    }
+#about .content {
+  grid-column: 1;
+  padding-left: 30px;
+}
 
-    #about h1,
-    h2 {
-      text-align: center;
-      grid-column: 1;
-    }
-  
+#about h1,
+h2 {
+  text-align: center;
+  grid-column: 1;
+}
