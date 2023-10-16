@@ -14,64 +14,66 @@ import { toGifDetailsView } from '../views/gif-details-view.js';
 /**
  * Loads and renders the specified page based on the provided page name.
  * @param {string} [page=''] - The name of the page to be loaded.
- * @returns {void|null} Returns `void` if a valid page is loaded, otherwise `null`.
+ * @return {void|null} Returns `void` if a valid page is loaded, otherwise `null`.
  */
 export const loadPage = (page = '') => {
 
-    switch (page) {
+  switch (page) {
 
-        case HOME:
-            setActiveNav(HOME);
-            return renderHome();
+  case HOME:
+    setActiveNav(HOME);
+    return renderHome();
 
-        case TRENDING:
-            setActiveNav(TRENDING);
-            return renderTrending();
+  case TRENDING:
+    setActiveNav(TRENDING);
+    return renderTrending();
 
-        case FAVORITES:
-            setActiveNav(FAVORITES);
-            return renderFavorites();
+  case FAVORITES:
+    setActiveNav(FAVORITES);
+    return renderFavorites();
 
-        case UPLOAD:
-            setActiveNav(UPLOAD);
-            return renderUpload();
+  case UPLOAD:
+    setActiveNav(UPLOAD);
+    return renderUpload();
 
-        case UPLOADED:
-            setActiveNav(UPLOADED);
-            return renderUploadedGifs();
+  case UPLOADED:
+    setActiveNav(UPLOADED);
+    return renderUploadedGifs();
 
-        case ABOUT:
-            setActiveNav(ABOUT);
-            return renderAbout();
-        default: return null;
-    }
+  case ABOUT:
+    setActiveNav(ABOUT);
+    return renderAbout();
+  default: return null;
+  }
 };
 
 /**
  * Renders an upload form in the specified container.
- * @returns {void}
+ * @return {void}
  */
 export const renderUpload = () => {
-    q(CONTAINER_SELECTOR).innerHTML = toUploadForm();
-}
+  q(CONTAINER_SELECTOR).innerHTML = toUploadForm();
+};
+
 
 /**
  * Renders uploaded GIFs in the specified container.
+ * @function
  * @async
  * @returns {<void>}
  * @throws {Error} If there is an error while rendering the GIFs.
  */
 const renderUploadedGifs = async () => {
-    /** @type {[string]} */
-    const uploadedGifs = getUploadedGifs();
-    try {
-        /** @type {Promise<any>[]} */
-        const gifs = await Promise.all(uploadedGifs.map(id => loadSingleGif(id)));
+  /** @type {[string]} */
+  const uploadedGifs = getUploadedGifs();
+  try {
+    /** @type {Promise<any>[]} */
+    const gifs = await Promise.all(uploadedGifs.map(id => loadSingleGif(id)));
 
-        q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(gifs);
-    } catch (error) {
-        console.error(error.message)
-    }
+    q(CONTAINER_SELECTOR).innerHTML = toUploadedGifsView(gifs);
+  } catch (error) {
+    console.error(error.message);
+  }
 };
 
 /**
@@ -81,45 +83,45 @@ const renderUploadedGifs = async () => {
  * @throws {Error} Throws if there is an error while rendering the trending GIFs.
  */
 export const renderTrending = async () => {
-    try {
-        const trendingGIFs = await loadTrendingGif();
-        q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trendingGIFs);
-    } catch (error) {
-        console.error(error.message);
-    }
-}
+  try {
+    const trendingGIFs = await loadTrendingGif();
+    q(CONTAINER_SELECTOR).innerHTML = toTrendingView(trendingGIFs);
+  } catch (error) {
+    console.error(error.message);
+  }
+};
 
 export const renderFavorites = async () => {
 
-    const favorites = getFavorites();
+  const favorites = getFavorites();
 
-    try {
-        const result = await Promise.all(favorites.map(id => loadSingleGif(id)));
-        q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(result)          ////////???????
-    } catch (error) {
-        console.error(error);
-    }
-}
+  try {
+    const result = await Promise.all(favorites.map(id => loadSingleGif(id)));
+    q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(result); // //////???????
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 export const renderHome = async () => {
-    try {
-        const randomGIFs = await loadHomePage();
-        q(CONTAINER_SELECTOR).innerHTML = toHomeView(randomGIFs)
-    } catch (error) {
-        console.error(error.message)
-    }
+  try {
+    const randomGIFs = await loadHomePage();
+    q(CONTAINER_SELECTOR).innerHTML = toHomeView(randomGIFs);
+  } catch (error) {
+    console.error(error.message);
+  }
 };
 
 export const renderAbout = () => {
-    q(CONTAINER_SELECTOR).innerHTML = toAboutView();
+  q(CONTAINER_SELECTOR).innerHTML = toAboutView();
 };
 
 export const renderGifDetails = async (id = null) => {
-    try {
-        const gifDetails = await loadGifDetails(id);
-        q(CONTAINER_SELECTOR).innerHTML = toGifDetailsView(gifDetails);
+  try {
+    const gifDetails = await loadGifDetails(id);
+    q(CONTAINER_SELECTOR).innerHTML = toGifDetailsView(gifDetails);
 
-    } catch (error) {
-        console.error(error);
-    }
+  } catch (error) {
+    console.error(error);
+  }
 };
