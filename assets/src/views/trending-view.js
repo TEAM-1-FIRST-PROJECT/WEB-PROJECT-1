@@ -10,7 +10,6 @@ export const toTrendingView = (trending) => {
      <button class="favorites-button">${renderFavoriteStatus(gif.id)}</button>
       </div>
     </div>
-    
   `).join('');
   
   return `

@@ -25,8 +25,8 @@
 }
 
 html {
-  font-size: 56%;
-  overflow-x: hidden;
+  font-size: 50%;
+
 }
 
 body {
@@ -81,6 +81,7 @@ header {
   color: var(--text-color);
   display: none;
 }
+
 /* 
 #container {
   flex: 1 1 30rem;
@@ -97,8 +98,7 @@ span {
 }
 
 .trending-gifs-container,
-.uploaded-gifs-container
-.searched-gif-result {
+.uploaded-gifs-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -194,7 +194,8 @@ footer {
   grid-area: footer;
   padding: 10px;
   text-align: center;
-  color: #ccc;
+  color: var(--bg-color);
+  font-size: 1.5rem;
 }
 
 .hidden {
@@ -270,7 +271,7 @@ input#search {
   font-size: 15pt;
 }
 
-#about > div > ul {
+#about>div>ul {
   align-items: center;
   list-style-type: circle;
 }
@@ -301,45 +302,62 @@ img {
 }
 
 
-
-
-.view-trending-details-btn {/* Use rgba for transparency */
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer; /* Add transition effect */
-  margin-top: 1rem;
-
+.details-view {
+  padding-bottom: 10rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
-.view-trending-details-btn:hover {
-  background: linear-gradient(135deg, #02fbff, #1bff1f, #0091ff, #d9ff00, #ff209e, #ff2424, #20cbff, #000000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 300% 300%;
-  animation: gradient 8s ease-in-out infinite;
+.detail-img {
+  margin: 20rem;
+  align-items: center;
+  border: 0.7rem solid;
+  border-radius: 1rem;
 }
 
-
-
-.favorite-button {
-  background-color: rgba(255, 0, 0, 0.7);;
+#container {
+  align-items: center;
+  text-align: center;
 }
-.favorite {
-  background-color: rgba(255, 0, 0, 0.7); /* Use rgba for transparency */
-  color: #fff;
-  padding: 5px 10px;
+
+.view-trending-details-btn {
+  padding: 4.3px 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s; /* Add transition effect */
+  margin-right: 5px;
+  margin-top: 1.5px;
+  box-shadow: 0 0 5px white,
+    0 0 25px white;
+    transition: all 0.3s;
+}
+
+.view-trending-details-btn:hover {
+  box-shadow: 0 0 5px white,
+    0 0 25 white, 0 0 50px white,
+    0 0 100px white, 0 0 500px white;
+}
+
+.favorite {
+  background-color: white;
+  color: black;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
   bottom: 0;
   right: 0;
-  
+  box-shadow: 0 0 5px white,
+    0 0 25px white;
 }
 
 .favorite:hover {
-  background-color: rgba(255, 0, 0, 1); /* Change color on hover */
+  box-shadow: 0 0 5px white,
+    0 0 25 white, 0 0 50px white,
+    0 0 100px white, 0 0 200px white;
 }
 
 
@@ -347,13 +365,13 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
- 
+
 }
 
 .trending-gifs-container .image-container {
   position: relative;
-    overflow: hidden;
-    display: flex;
+  overflow: hidden;
+  display: flex;
 }
 
 .image-container {
@@ -362,53 +380,49 @@ img {
 }
 
 .image-container:hover img {
-    transform: scale(1.1);
-  
+  transform: scale(1.1);
+
 }
 
 .image-container .button-container {
   position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-    text-align: center;
- 
-    transform: translateY(100%);
-    transition: .5s ease;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  transform: translateY(100%);
+  transition: .5s ease;
 }
 
 .image-container:hover .button-container {
   transform: translateY(0);
-} 
+}
+
 .view-trending-details-btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-
- 
-
-} 
+}
 
 
 .trending-gifs-container,
 .uploaded-gifs-container {
   display: grid;
   gap: 30px;
-  grid-template-columns: repeat(6, minmax(120px, 1fr));
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(120px, 1fr));
   padding: 2rem;
 }
 
 /* End uploaded GIFs styles */
 
-/*upload form*/
-/* Styles for the entire page */
 
 
 /* Styles for the form*/
@@ -421,13 +435,7 @@ img {
   /* Drop shadow for the container */
 }
 
-/* .formDiv {
-  display: flex; 
-  align-items: center;
-  margin-top: 5rem;
-  padding-bottom: 300px;
-  padding-top: 300px;
-} */
+
 
 
 .form {
@@ -459,9 +467,11 @@ img {
 /* Styles for the submit button */
 .submit,
 .text {
-  width: 350px; /* Set the width to your desired size */
-  height: 35px; /* Set the height to your desired size */
-  
+  width: 350px;
+  /* Set the width to your desired size */
+  height: 35px;
+  /* Set the height to your desired size */
+
   background-color: #84dd99;
   /* Button background color */
   color: white;
@@ -480,15 +490,6 @@ img {
 
 
 
-#search > div {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); 
-  gap: 10px; 
-  justify-content: space-between; 
-  padding: 10px; 
-  text-align: center;
-}
-
 #about {
   /* display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -502,8 +503,8 @@ img {
 }
 
 #about #container {
-border-radius: 8px;
-padding: 20px;
+  border-radius: 8px;
+  padding: 20px;
 }
 
 #about .content {
@@ -511,7 +512,8 @@ padding: 20px;
   padding-left: 30px;
 }
 
-#about h1,h2 {
+#about h1,
+h2 {
   text-align: center;
   grid-column: 1;
 }
