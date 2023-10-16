@@ -117,7 +117,8 @@ span {
 }
 
 .trending-gifs-container,
-.uploaded-gifs-container {
+.uploaded-gifs-container
+.searched-gif-result {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -595,6 +596,15 @@ img {
   margin-top: 5rem;
   padding-bottom: 300px;
   padding-top: 300px;
+}
+
+#search > div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 10px; 
+  justify-content: space-between; 
+  padding: 10px; 
+  text-align: center;
 }
 
 /* End upload form*/
