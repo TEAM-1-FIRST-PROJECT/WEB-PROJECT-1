@@ -295,7 +295,7 @@ img {
 
 .detail-img {
   margin: 20rem;
-  
+
   border: 0.7rem solid;
   border-radius: 1rem;
 }
@@ -418,9 +418,6 @@ img {
   /* Drop shadow for the container */
 }
 
-
-
-
 .form {
   text-align: center;
   padding-top: 6%;
@@ -444,42 +441,49 @@ img {
 
 .custom-file-input:hover {
   background-color: #0056b3;
-  /* Button background color on hover */
 }
 
-/* Styles for the submit button */
 .submit,
 .input-text {
   margin: 0.5%;
   width: 350px;
   height: 35px;
-}
-
-.text {
-  width: 350px;
-  /* Set the width to your desired size */
-  height: 35px;
-  /* Set the height to your desired size */
-
-  background-color: #84dd99;
+  margin-bottom: 2%;
+  background-color: #ffffff;
+  border-radius: 2px;
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 2px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  margin: 0.5%;
+  width: 350px;
+  height: 35px;
+  margin-bottom: 2%;
+  background-color: #ffffff;
+  display: block;
+  color: #727475;
+  font-size: 13px;
+  padding: 10px 20px;
+  border-radius: 2px;
+}
+
 .submit:hover {
   background-color: #218838;
-  /* Button background color on hover */
 }
 
 .upload-form-message {
-  padding-top: 2%;
   font-size: 30px;
+  vertical-align: top;
 }
-
+/* End for the form */
 
 #search>div {
   display: grid;
@@ -522,4 +526,19 @@ img {
 h2 {
   text-align: center;
   grid-column: 1;
+}
+
+#ab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.co {
+  box-shadow: 0 0 20px #BD93F9;
+  box-shadow: 0 0 10px #BD93F9;
+  background-color: rgba(128, 0, 128, 0.3);
+  padding: 3% 15%;
+
 }
