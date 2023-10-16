@@ -4,6 +4,7 @@
  */
 export const toUploadForm = () => `
   <form class="form" id="uploadForm">
+  <p class="upload-form-message">upload form</p>
     <input class="text" type="text" id="inputGif-username" placeholder="user name"><br />
     <input class="text" type="text" id="inputGif-tags" placeholder="enter some tags comma separated"><br />
     <input class="text" type="file" accept=".gif" id="inputGif"><br />
