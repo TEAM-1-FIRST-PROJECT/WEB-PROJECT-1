@@ -20,7 +20,7 @@ export const loadHomePage = async () => {
     const dayOfWeek = today.getDay();
     const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const dayName = daysOfWeek[dayOfWeek];
-    const url = `${BASE_URL}/search?q=${dayName}&api_key=${API_KEY}&limit=30` //`${BASE_URL}/${id}?api_key=${API_KEY}&rating=g`
+    const url = `${BASE_URL}/search?q=${dayName}&api_key=${API_KEY}&limit=15` //`${BASE_URL}/${id}?api_key=${API_KEY}&rating=g`
     try {
         return (await fetch(url)).json();
     } catch (error) {
@@ -53,7 +53,7 @@ export const loadSingleGif = async (id) => {
 export const loadTrendingGif = async () => {
 
     try {
-        const loadTrendingGifURL = `${BASE_URL}/trending?api_key=${API_KEY}`;
+        const loadTrendingGifURL = `${BASE_URL}/trending?api_key=${API_KEY}&limit=15`;
         const response = await fetch(loadTrendingGifURL)
         return response.json();
     } catch (error) {
@@ -82,7 +82,7 @@ export const loadGifDetails = async (id) => {
  */
 export const loadSearchGif = async (searchTerm) => {
     try {
-        const loadSearchGifURL = `${BASE_URL}/search?q=${searchTerm}&api_key=${API_KEY}&limit=12`;
+        const loadSearchGifURL = `${BASE_URL}/search?q=${searchTerm}&api_key=${API_KEY}&limit=15`;
         const response = await fetch(loadSearchGifURL);
         return response.json();
     } catch (error) {

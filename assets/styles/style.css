@@ -472,10 +472,17 @@ div.movie-detailed div.movie-info {
 #about h1 {
   color: rgb(187, 135, 255);
   margin-bottom: 50px;
+  font-size: 25pt;
 }
 
 #about h2 {
   color: rgb(229, 210, 255);
+  font-size: 15pt;
+}
+
+#about > div > ul {
+  align-items: center;
+  list-style-type: circle;
 }
 
 /* End about styles */
@@ -600,11 +607,40 @@ img {
 
 #search > div {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(5, 1fr); 
   gap: 10px; 
   justify-content: space-between; 
   padding: 10px; 
   text-align: center;
 }
+
+#about {
+  /* display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: 50px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px #BD93F9;
+  margin-top: 100px;
+  margin-bottom: 300px;
+}
+
+#about #container {
+border-radius: 8px;
+padding: 20px;
+}
+
+#about .content {
+  grid-column: 1;
+  padding-left: 30px;
+}
+
+#about h1,h2 {
+  text-align: center;
+  grid-column: 1;
+}
+
+
 
 /* End upload form*/
