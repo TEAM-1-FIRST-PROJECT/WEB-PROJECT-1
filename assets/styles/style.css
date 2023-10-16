@@ -433,7 +433,7 @@ img {
 
 .form {
   text-align: center;
-  padding-top: 5%;
+  padding-top: 6%;
   text-size-adjust: 10;
 }
 
@@ -459,16 +459,12 @@ img {
 
 /* Styles for the submit button */
 .submit,
-.text {
+.input-text {
+  margin: 1%;
   width: 350px;
-  /* Set the width to your desired size */
   height: 35px;
-  /* Set the height to your desired size */
-
   background-color: #84dd99;
-  /* Button background color */
   color: white;
-  /* Button text color */
   padding: 10px 20px;
   border: none;
   border-radius: 2px;
@@ -481,6 +477,7 @@ img {
   /* Button background color on hover */
 }
 .upload-form-message {
+  padding-top: 2%;
   font-size: 30px;
 }
 
