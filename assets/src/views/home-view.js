@@ -1,4 +1,4 @@
-import { renderFavoriteStatus } from "../events/favorite-events.js";
+import { renderFavoriteStatus } from '../events/favorite-events.js';
 
 export const toHomeView = (trending) => {
   const gifs = trending.data.map((gif) => `
@@ -18,5 +18,5 @@ export const toHomeView = (trending) => {
       ${gifs}
     </div>
   </div>
-`
+`;
 };
