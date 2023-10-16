@@ -460,7 +460,7 @@ img {
 /* Styles for the submit button */
 .submit,
 .input-text {
-  margin: 1%;
+  margin: 0.5%;
   width: 350px;
   height: 35px;
   background-color: #84dd99;
