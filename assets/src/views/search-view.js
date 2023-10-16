@@ -13,8 +13,8 @@ export const toSearchSimple = (gif) => `
 <div class="searched-gif-result">
 <div class="content">
   <img src="${gif.images.fixed_height.url}">
-  <button class="view-trending-details-btn" data-trending-details-id="${gif.id}">Gif Details</button>
-  ${renderFavoriteStatus(gif.id)}
+  <button class="view-trending-details-btn" data-trending-details-id="${gif.id}">View Details</button>
+  <button class="favorites-button">${renderFavoriteStatus(gif.id)}</button>
 </div>
 </div>
 `;

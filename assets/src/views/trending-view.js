@@ -6,8 +6,8 @@ export const toTrendingView = (trending) => {
     <div class="image-container">
       <img src="${gif.images.fixed_height.url}">
       <div class="button-container">
-      <a href="#" class="view-trending-details-btn" data-trending-details-id="${gif.id}">Gif Details</a>
-      ${renderFavoriteStatus(gif.id)}
+      <button class="view-trending-details-btn" data-trending-details-id="${gif.id}">View Details</button>
+     <button class="favorites-button">${renderFavoriteStatus(gif.id)}</button>
       </div>
     </div>
     

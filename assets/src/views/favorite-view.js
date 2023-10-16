@@ -7,8 +7,8 @@ export const toFavoritesView = (favorites) => {
   <div class="image-container">
       <img src="${gif.data.images.fixed_height.url}">
       <div class="button-container">
-      <button class="view-trending-details-btn" data-trending-details-id="${gif.data.id}">Gif Details</button>
-      ${renderFavoriteStatus(gif.data.id)}
+      <button class="view-trending-details-btn" data-trending-details-id="${gif.data.id}">View Details</button>
+      <button class="favorites-button">${renderFavoriteStatus(gif.data.id)}</button>
       </div>
     </div>
     
