@@ -1,4 +1,4 @@
-import { renderFavoriteStatus } from "../events/favorite-events.js";
+import { renderFavoriteStatus } from '../events/favorite-events.js';
 
 export const toFavoritesView = (favorites) => {
 
@@ -14,12 +14,12 @@ export const toFavoritesView = (favorites) => {
     
   `).join('');
 
-    return `
+  return `
     
       <div id="trending">
         <div class="trending-gifs-container">
           ${gifs || '<p>Heart some GIF to see them here.</p>'} 
         </div>
       </div>
-    `
+    `;
 };
