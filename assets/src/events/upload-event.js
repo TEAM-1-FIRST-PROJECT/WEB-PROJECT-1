@@ -13,10 +13,9 @@ export const uploadGif = () => {
     const fileInput = document.getElementById('inputGif');
     const username = document.getElementById('inputGif-username').value;
     const tags = document.getElementById('inputGif-tags').value.trim();
-    formData.append('file', fileInput.files[0]);
-    //const url = `${UPLOAD_URL}${API_KEY}&username=${username}&tags=${tags}`;
     const url = `${UPLOAD_URL}${API_KEY}&username=${username}&tags=${tags}`;
-    //const url = UPLOAD_URL + API_KEY;
+
+    formData.append('file', fileInput.files[0]);
     try {
       const response = await fetch(url, {
         method: 'POST',
@@ -24,14 +23,15 @@ export const uploadGif = () => {
       });
       if (response.ok) {
         const data = await response.json();
-        document.getElementById('uploadForm').innerHTML = `GIF uploaded successfully. ID: ${data.data.id}`;
+        document.getElementById('uploadForm').innerHTML = `<p class="upload-form-message">GIF uploaded successfully with: ID: ${data.data.id}</p>`;
         addUploadedGifs(data.data.id);
       } else {
-        document.getElementById('uploadForm').innerHTML = 'Failed to upload GIF';
+        document.getElementById('uploadForm').innerHTML = `<p class="upload-form-message">Failed to upload GIF</p>`;
       }
     } catch (error) {
       console.error(error);
-      document.getElementById('uploadForm').innerHTML = 'Error uploading GIF';
+      document.getElementById('uploadForm').innerHTML = '<p class="upload-form-message">Error uploading GIF</p>';
     }
   });
 };
+
