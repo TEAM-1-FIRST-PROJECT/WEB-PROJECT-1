@@ -21,13 +21,13 @@ export const loadHomePage = async () => {
   const dayOfWeek = today.getDay();
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const dayName = daysOfWeek[dayOfWeek];
-  const url = `${BASE_URL}/search?q=${dayName}&api_key=${API_KEY}&limit=15` //`${BASE_URL}/${id}?api_key=${API_KEY}&rating=g`
+  const url = `${BASE_URL}/search?q=${dayName}&api_key=${API_KEY}&limit=15`; // `${BASE_URL}/${id}?api_key=${API_KEY}&rating=g`
   try {
     return (await fetch(url)).json();
   } catch (error) {
-    console.error(error.message)
+    console.error(error.message);
   }
-}
+};
 
 /**
  * Loads a single GIF by its ID.
@@ -56,7 +56,7 @@ export const loadTrendingGif = async () => {
 
   try {
     const loadTrendingGifURL = `${BASE_URL}/trending?api_key=${API_KEY}&limit=15`;
-    const response = await fetch(loadTrendingGifURL)
+    const response = await fetch(loadTrendingGifURL);
     return response.json();
   } catch (error) {
     console.log(error.message);
@@ -69,7 +69,7 @@ export const loadTrendingGif = async () => {
  * @async
  * @function
  * @param {string} id - The ID of the GIF for which details need to be retrieved.
- * @returns {Promise<object>} - The details of the GIF retrieved from the Giphy API.
+ * @return {Promise<object>} - The details of the GIF retrieved from the Giphy API.
  * @throws {Error} Throws if there is an error while fetching or parsing the response.
  */
 export const loadGifDetails = async (id) => {
@@ -98,4 +98,4 @@ export const loadSearchGif = async (searchTerm) => {
   } catch (error) {
     console.log(error.message);
   }
-}
+};

@@ -1,4 +1,4 @@
-import { renderFavoriteStatus } from "../events/favorite-events.js";
+import { renderFavoriteStatus } from '../events/favorite-events.js';
 
 /**
  * Generates HTML code to display the GIFs found for the search term.
@@ -6,7 +6,7 @@ import { renderFavoriteStatus } from "../events/favorite-events.js";
  *
  * @param {Array} gifs - An array of GIF objects.
  * @param {string} searchTerm - The search term used to find the GIFs.
- * @returns {string} - The generated HTML code representing the search view with the GIFs found for the search term.
+ * @return {string} - The generated HTML code representing the search view with the GIFs found for the search term.
  */
 export const toSearchView = (gifs, searchTerm) => `
 <div id="search">
@@ -25,7 +25,7 @@ export const toSearchView = (gifs, searchTerm) => `
  * @param {object} gif - The GIF object containing the necessary information for rendering the simplified view.
  *                       It should have an id property and an images property with a fixed_height property
  *                       that contains the URL of the GIF image.
- * @returns {string} - A string of HTML code representing the simplified view of the GIF.
+ * @return {string} - A string of HTML code representing the simplified view of the GIF.
  */
 export const toSearchSimple = (gif) => `
 <div class="image-container">

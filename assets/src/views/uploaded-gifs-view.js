@@ -14,7 +14,7 @@ export const toUploadedGifsView = (uploaded) => {
   </div>  
 `).join('');
 
-return `
+  return `
   <div id="trending">   
     <div class="trending-gifs-container">
       ${gifs|| '<p class="upload-form-message">Upload some GIF to see them here.</p>'}

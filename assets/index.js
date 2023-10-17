@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // upload events
     if (e.target.classList.contains('submit')) {
       uploadNewGif();
-      //document.getElementById('uploadForm').innerHTML = `uploading}`;
+      // document.getElementById('uploadForm').innerHTML = `uploading}`;
     }
 
     // toggle favorite event

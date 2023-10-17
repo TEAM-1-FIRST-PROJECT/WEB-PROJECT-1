@@ -20,30 +20,30 @@ export const loadPage = (page = '') => {
 
   switch (page) {
 
-    case HOME:
-      setActiveNav(HOME);
-      return renderHome();
+  case HOME:
+    setActiveNav(HOME);
+    return renderHome();
 
-    case TRENDING:
-      setActiveNav(TRENDING);
-      return renderTrending();
+  case TRENDING:
+    setActiveNav(TRENDING);
+    return renderTrending();
 
-    case FAVORITES:
-      setActiveNav(FAVORITES);
-      return renderFavorites();
+  case FAVORITES:
+    setActiveNav(FAVORITES);
+    return renderFavorites();
 
-    case UPLOAD:
-      setActiveNav(UPLOAD);
-      return renderUpload();
+  case UPLOAD:
+    setActiveNav(UPLOAD);
+    return renderUpload();
 
-    case UPLOADED:
-      setActiveNav(UPLOADED);
-      return renderUploadedGifs();
+  case UPLOADED:
+    setActiveNav(UPLOADED);
+    return renderUploadedGifs();
 
-    case ABOUT:
-      setActiveNav(ABOUT);
-      return renderAbout();
-    default: return null;
+  case ABOUT:
+    setActiveNav(ABOUT);
+    return renderAbout();
+  default: return null;
   }
 };
 
@@ -56,6 +56,7 @@ export const renderUpload = () => {
 };
 
 
+// eslint-disable-next-line valid-jsdoc
 /**
  * Renders uploaded GIFs in the specified container.
  * @function
@@ -97,7 +98,7 @@ export const renderTrending = async () => {
   * and then generates the HTML markup for displaying the GIFs using the `toFavoritesView` function.
   * Finally, it updates the content of the container element on the webpage with the generated HTML.
   *
-  * @returns {void}
+  * @return {void}
   */
 export const renderFavorites = async () => {
 
@@ -120,7 +121,7 @@ export const renderFavorites = async () => {
  * @example
  * renderHome();
  *
- * @returns {void}
+ * @return {void}
  */
 export const renderHome = async () => {
   try {
@@ -134,11 +135,11 @@ export const renderHome = async () => {
 
 /**
   * Renders the about view in the application.
-  * 
+  *
   * @example
   * renderAbout();
-  * 
-  * @returns {void} - This function does not return any value.
+  *
+  * @return {void} - This function does not return any value.
   */
 export const renderAbout = () => {
 
@@ -147,7 +148,7 @@ export const renderAbout = () => {
 
 /**
  * Renders the details of a GIF.
- * 
+ *
  * @param {string} id - The ID of the GIF for which the details should be rendered. If no ID is provided, the function will attempt to load the details of a default GIF.
  * @returns {void} - None. The function updates the HTML content of a container element with the rendered GIF details.
  */

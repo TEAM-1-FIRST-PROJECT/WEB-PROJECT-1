@@ -1,8 +1,8 @@
-import { renderFavoriteStatus } from "../events/favorite-events.js";
+import { renderFavoriteStatus } from '../events/favorite-events.js';
 
 /**
   * Generates HTML code representing the trending GIFs.
-  * 
+  *
   * @param {object} trending - An object containing an array of GIF data.
   * @returns {string} - A string of HTML code representing the trending GIFs.
   */
@@ -24,5 +24,5 @@ export const toTrendingView = (trending) => {
       ${gifs}
       </div>
     </div>
-  `
+  `;
 };

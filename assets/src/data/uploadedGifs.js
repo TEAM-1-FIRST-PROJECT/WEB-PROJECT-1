@@ -1,4 +1,4 @@
-let uploadedGifs = JSON.parse(localStorage.getItem('uploadedGifs')) || [];
+const uploadedGifs = JSON.parse(localStorage.getItem('uploadedGifs')) || [];
 
 /**
  * Adds a GIF to the list of uploaded GIFs.
@@ -20,6 +20,6 @@ export const addUploadedGifs = (gifId) => {
 
 /**
  * Returns shallow copy array .
- * @returns {[string]}
+ * @return {[string]}
  */
 export const getUploadedGifs = () => [...uploadedGifs];

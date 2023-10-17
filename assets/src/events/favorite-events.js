@@ -4,7 +4,7 @@ import { q } from './helpers.js';
 
 /**
  * Toggles the favorite status of a GIF.
- * 
+ *
  * @param {string} gifId - The ID of the GIF to toggle the favorite status for.
  * @returns {void} - The function does not return a value.
  */
@@ -15,7 +15,7 @@ export const toggleFavoriteStatus = (gifId) => {
 
   if (favorites.includes(gifId)) {
     removeFavorite(gifId);
-    heartSpan.classList.remove('active')
+    heartSpan.classList.remove('active');
     heartSpan.innerHTML = EMPTY_HEART;
   } else {
     addFavorite(gifId);
@@ -26,7 +26,7 @@ export const toggleFavoriteStatus = (gifId) => {
 
 /**
  * Renders the favorite status of a GIF.
- * 
+ *
  * @param {string} gifId - The ID of the GIF for which the favorite status is being rendered.
  * @returns {string} A string representing the favorite status of the GIF, including the heart symbol and CSS class.
  *
@@ -40,8 +40,8 @@ export const toggleFavoriteStatus = (gifId) => {
 export const renderFavoriteStatus = (gifId) => {
   const favorites = getFavorites();
 
-  return favorites.includes(gifId)
-    ? `<span class="favorite active" data-gif-id="${gifId}">${FULL_HEART}</span>`
-    : `<span class="favorite" data-gif-id="${gifId}">${EMPTY_HEART}</span>`;
+  return favorites.includes(gifId) ?
+    `<span class="favorite active" data-gif-id="${gifId}">${FULL_HEART}</span>` :
+    `<span class="favorite" data-gif-id="${gifId}">${EMPTY_HEART}</span>`;
 };
 

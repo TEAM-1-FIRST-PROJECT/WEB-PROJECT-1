@@ -3,7 +3,7 @@ import { renderFavoriteStatus } from '../events/favorite-events.js';
 /**
  * Generates HTML code to display favorite GIFs in a favorites view.
  * @param {Array} favorites - An array of favorite GIF objects.
- * @returns {string} - The HTML code for the favorites view.
+ * @return {string} - The HTML code for the favorites view.
  */
 export const toFavoritesView = (favorites) => {
   const gifs = favorites.map((gif) => `
