@@ -3,14 +3,14 @@
  * @returns {void}
  */
 export const toUploadForm = () => `
-<div id="ab">
-  <div class="co">
+<div id="outer-upload-form">
+  <div class="upload-form">
     <p class="upload-form-message">upload form</p>
     <form class="form" id="uploadForm">     
       <input class="input-text" type="text" id="inputGif-username" placeholder="user name"><br />
       <input class="input-text" type="text" id="inputGif-tags" placeholder="enter some tags comma separated"><br />
       
-      <label for="file-upload" class="custom-file-upload">
+      <label for="file-upload" class="fake-upload">
       <i class="fa fa-upload" style="font-size:14px"></i>  choose file
         </label>
          <input id="file-upload" type="file"/><br />
