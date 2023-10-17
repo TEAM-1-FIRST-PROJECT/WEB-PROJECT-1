@@ -5,6 +5,7 @@ import { loadPage, renderGifDetails } from './src/events/navigation-events.js';
 import { renderSearchItems } from './src/events/search-events.js';
 import { uploadNewGif } from './src/requests/request-service.js';
 import { renderFavorites } from './src/events/navigation-events.js';
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // add global listener
@@ -23,20 +24,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // upload events
     if (e.target.classList.contains('submit')) {
       uploadNewGif();
+      //document.getElementById('uploadForm').innerHTML = `uploading}`;
     }
 
     // toggle favorite event
     if (e.target.classList.contains('favorite')) {
       toggleFavoriteStatus(e.target.getAttribute('data-gif-id'));
-
       if (document.body.textContent.includes('Favorites GIFs')) {
         renderFavorites();
       }
     }
-    
-
   });
-
+  document.addEventListener('change', e => {
+    if (e.target.classList.contains('input-text')) {
+      const fileInput = document.getElementById('inputGif').files[0];
+      document.getElementById('input-gif').innerHTML = `<i class="upload" style="font-size:14px"></i>  ${fileInput.name}`;
+    }
+  });
   // search events
   q('input#search').addEventListener('input', e => {
     renderSearchItems(e.target.value);
