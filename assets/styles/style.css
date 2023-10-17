@@ -213,6 +213,7 @@ input#search {
   -webkit-text-fill-color: transparent;
   background-size: 300% 300%;
   animation: gradient 8s ease-in-out infinite;
+  text-indent: 10px;
 }
 
 
@@ -226,8 +227,6 @@ input#search {
   color: rgb(229, 210, 255);
   font-size: 15pt;
 }
-
-
 
 /* End about styles */
 
@@ -254,19 +253,39 @@ img {
   /* Container needs to be positioned */
 }
 
-
 .details-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 0 20px #BD93F9;
   background-color: rgba(128, 0, 128, 0.3);
-  max-width: 600px;
+  max-width: 800px;
   width: 100%;
   box-shadow: 0 0 10px #BD93F9;
-  margin-left: 30%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 10%;
+}
+
+.details-view-text {
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.header-text {
+  font-size: 17pt;
+  color: white;
+}
+
+.details-view-text h2,
+h1 {
+  font-size: 15pt;
+  color: rgb(208, 181, 255);
 }
 
 .detail-img {
-  margin: 20rem;
-
+  margin: 7rem;
   border: 0.7rem solid;
   border-radius: 1rem;
 }
@@ -468,6 +487,7 @@ input[type="file"] {
   background-color: rgba(128, 0, 128, 0.3);
   padding: 3% 15%;
 }
+
 /* End for the form */
 
 #search>div {
@@ -485,6 +505,7 @@ input[type="file"] {
   align-items: center;
   height: 500px;
 }
+
 .about-container {
   box-shadow: 0 0 10px #BD93F9;
   background-color: rgba(128, 0, 128, 0.3);
@@ -498,7 +519,7 @@ h2 {
   grid-column: 1;
 }
 
-#trending > div > p {
+#trending>div>p {
   grid-column: 3;
   color: white;
   margin-bottom: 50px;
@@ -507,23 +528,23 @@ h2 {
   text-align: center;
 }
 
-#trending > div {
-display: grid;
-grid-template-columns: repeat(5, 1fr);
-justify-content: center;
-/* margin-top: 18%;
+#trending>div {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  /* margin-top: 18%;
 margin-bottom: 18%; */
 }
 
-#uploaded > div {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-justify-content: center;
-margin-top: 18%;
-margin-bottom: 18%;
+#uploaded>div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  margin-top: 18%;
+  margin-bottom: 18%;
 }
 
-#uploaded > div > p {
+#uploaded>div>p {
   grid-column: 2;
   color: white;
   margin-bottom: 50px;
@@ -532,11 +553,19 @@ margin-bottom: 18%;
   text-align: center;
 }
 
-#search > div > p {
+#search>div>p {
   grid-column: 3;
   color: white;
   margin-bottom: 50px;
   font-size: 20pt;
   font-weight: bold;
   text-align: center;
+}
+
+#container>div>img {
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
 }
