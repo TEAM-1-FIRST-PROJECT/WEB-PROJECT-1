@@ -521,8 +521,8 @@ h2 {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 justify-content: center;
-margin-top: 18%;
-margin-bottom: 18%;
+/* margin-top: 18%;
+margin-bottom: 18%; */
 }
 
 #uploaded > div {
