@@ -119,6 +119,7 @@ export const renderAbout = () => {
 export const renderGifDetails = async (id = null) => {
   try {
     const gifDetails = await loadGifDetails(id);
+    console.log('click det')
     q(CONTAINER_SELECTOR).innerHTML = toGifDetailsView(gifDetails);
 
   } catch (error) {
