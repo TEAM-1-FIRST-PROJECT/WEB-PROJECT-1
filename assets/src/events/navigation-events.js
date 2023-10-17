@@ -6,9 +6,9 @@ import { toHomeView } from '../views/home-view.js';
 import { toFavoritesView } from '../views/favorite-view.js';
 import { getFavorites } from '../data/favorites.js';
 import { q, setActiveNav } from './helpers.js';
-import { toUploadForm } from '../views/uploadForm-view.js';
+import { toUploadForm } from '../views/upload-form-view.js';
 import { getUploadedGifs } from '../data/uploadedGifs.js';
-import { toUploadedGifsView } from '../views/uploadedGifs-view.js';
+import { toUploadedGifsView } from '../views/uploaded-gifs-view.js';
 import { toGifDetailsView } from '../views/gif-details-view.js';
 
 /**
@@ -119,6 +119,7 @@ export const renderAbout = () => {
 export const renderGifDetails = async (id = null) => {
   try {
     const gifDetails = await loadGifDetails(id);
+    console.log('click det')
     q(CONTAINER_SELECTOR).innerHTML = toGifDetailsView(gifDetails);
 
   } catch (error) {

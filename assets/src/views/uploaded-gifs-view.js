@@ -9,14 +9,14 @@ export const toUploadedGifsView = (uploaded) => {
   
     <div class="uploaded-gif">
       <img src="${gif.data.images.fixed_height.url}">
-      <button class="view-trending-details-btn" data-trending-details-id="${gif.id}">View Details</button>
+      <button class="view-trending-details-btn" data-trending-details-id="${gif.data.id}">View Details</button>
       <button class="favorites-button">${renderFavoriteStatus(gif.data.id)}</button>
     </div>  
   `).join('');
   return `
       <div id="uploaded">
         <div class="uploaded-gifs-container">
-          ${gifs || '<p>Upload some GIF to see them here.</p>'} 
+          ${gifs || '<p class="upload-form-message">Upload some GIF to see them here.</p>'} 
         </div>
       </div>
     `;
