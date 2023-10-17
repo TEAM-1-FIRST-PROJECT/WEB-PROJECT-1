@@ -9,7 +9,7 @@ export const toUploadedGifsView = (uploaded) => {
   
     <div class="uploaded-gif">
       <img src="${gif.data.images.fixed_height.url}">
-      <button class="view-trending-details-btn" data-trending-details-id="${gif.id}">View Details</button>
+      <button class="view-trending-details-btn" data-trending-details-id="${gif.data.id}">View Details</button>
       <button class="favorites-button">${renderFavoriteStatus(gif.data.id)}</button>
     </div>  
   `).join('');
