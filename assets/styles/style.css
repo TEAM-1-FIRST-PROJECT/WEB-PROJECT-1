@@ -524,3 +524,29 @@ justify-content: center;
 margin-top: 18%;
 margin-bottom: 18%;
 }
+
+#uploaded > div {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+justify-content: center;
+margin-top: 18%;
+margin-bottom: 18%;
+}
+
+#uploaded > div > p {
+  grid-column: 2;
+  color: white;
+  margin-bottom: 50px;
+  font-size: 25pt;
+  font-weight: bold;
+  text-align: center;
+}
+
+#search > div > p {
+  grid-column: 3;
+  color: white;
+  margin-bottom: 50px;
+  font-size: 25pt;
+  font-weight: bold;
+  text-align: center;
+}
