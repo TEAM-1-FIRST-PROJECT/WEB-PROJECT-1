@@ -10,11 +10,13 @@ export const toUploadForm = () => `
       <input class="input-text" type="text" id="inputGif-username" placeholder="user name"><br />
       <input class="input-text" type="text" id="inputGif-tags" placeholder="enter some tags comma separated"><br />
       
-      <label for="file-upload" class="fake-upload">
+      <label for="inputGif" class="fake-upload">
       <i class="fa fa-upload" style="font-size:14px"></i>  choose file
+      <input class="input-text" type="file" accept=".gif" id="inputGif"><br />
         </label>
-         <input id="file-upload" type="file"/><br />
-         <input class="input-text" type="file" accept=".gif" id="inputGif"><br />
+         
+         
+         <input id="file-uploa" type="file"/><br />
       <button type="submit" class='submit'>Upload GIF</button>
       
   </form> 

@@ -23,14 +23,14 @@ export const uploadGif = () => {
       });
       if (response.ok) {
         const data = await response.json();
-        document.getElementById('uploadForm').innerHTML = `<p class="upload-form-message">GIF uploaded successfully with: ID: ${data.data.id}</p>`;
+        document.getElementById('uploadForm').innerHTML = `<p class="upload-form-message">GIF uploaded successfully.`;
         addUploadedGifs(data.data.id);
       } else {
-        document.getElementById('uploadForm').innerHTML = `<p class="upload-form-message">Failed to upload GIF</p>`;
+        document.getElementById('uploadForm').innerHTML = `<p class="upload-form-message">Failed to upload GIF.</p>`;
       }
     } catch (error) {
       console.error(error);
-      document.getElementById('uploadForm').innerHTML = '<p class="upload-form-message">Error uploading GIF</p>';
+      document.getElementById('uploadForm').innerHTML = '<p class="upload-form-message">Error uploading GIF.</p>';
     }
   });
 };
