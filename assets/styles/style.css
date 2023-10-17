@@ -173,7 +173,7 @@ span {
   max-width: 90%;
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: 16px auto;
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 
