@@ -422,7 +422,7 @@ img {
   margin-bottom: 2%;
   background-color: #ffffff;
   border-radius: 2px;
-  color: white;
+  color: #727475;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
@@ -438,7 +438,7 @@ input[type="file"] {
   width: 350px;
   height: 35px;
   margin-bottom: 2%;
-  background-color: #ffffff;
+  background-color: white;
   display: block;
   color: #727475;
   font-size: 13px;
@@ -448,6 +448,7 @@ input[type="file"] {
 
 .submit:hover {
   background-color: #218838;
+  color: white;
 }
 
 .upload-form-message {
