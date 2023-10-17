@@ -5,7 +5,6 @@ import { renderFavoriteStatus } from '../events/favorite-events.js';
  */
 export const toUploadedGifsView = (uploaded) => {
   const gifs = uploaded.map((gif) => `
-  
   <div class="image-container">
     <img src="${gif.data.images.fixed_height.url}">
       <div class="button-container">

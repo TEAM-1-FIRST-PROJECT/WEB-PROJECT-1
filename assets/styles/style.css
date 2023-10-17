@@ -39,14 +39,16 @@ body {
 .header {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  padding: 2rem 9%;
+  max-width: 100%;
+  padding: 1rem 4%;
   background: var(--bg-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 999;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 
@@ -160,44 +162,31 @@ span {
 
 
 .image-container {
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 4rem;
   z-index: 1;
 }
 
 .image-container>img {
-  max-width: 100%;
+  padding: 0.6rem;
+  max-width: 90%;
   height: auto;
   display: block;
   margin: 0 auto;
-
   border-radius: 10px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  animation: pulse 2s infinite;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+
 }
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.10);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
 
 footer {
-  grid-area: footer;
   padding: 10px;
-  text-align: center;
   color: var(--bg-color);
   font-size: 1.5rem;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .hidden {

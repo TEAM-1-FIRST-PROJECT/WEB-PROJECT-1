@@ -9,7 +9,6 @@ import { renderFavoriteStatus } from "../events/favorite-events.js";
 
 export const toTrendingView = (trending) => {
   const gifs = trending.data.map((gif) => `
-    
     <div class="image-container">
       <img src="${gif.images.fixed_height.url}">
       <div class="button-container">
