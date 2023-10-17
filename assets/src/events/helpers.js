@@ -1,5 +1,3 @@
-import { EMPTY_HEART, FULL_HEART } from '../common/constants.js';
-import { getFavorites } from '../data/favorites.js';
 
 export const q = (selector) => document.querySelector(selector);
 

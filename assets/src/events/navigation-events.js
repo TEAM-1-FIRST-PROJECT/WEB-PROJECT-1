@@ -20,30 +20,30 @@ export const loadPage = (page = '') => {
 
   switch (page) {
 
-  case HOME:
-    setActiveNav(HOME);
-    return renderHome();
+    case HOME:
+      setActiveNav(HOME);
+      return renderHome();
 
-  case TRENDING:
-    setActiveNav(TRENDING);
-    return renderTrending();
+    case TRENDING:
+      setActiveNav(TRENDING);
+      return renderTrending();
 
-  case FAVORITES:
-    setActiveNav(FAVORITES);
-    return renderFavorites();
+    case FAVORITES:
+      setActiveNav(FAVORITES);
+      return renderFavorites();
 
-  case UPLOAD:
-    setActiveNav(UPLOAD);
-    return renderUpload();
+    case UPLOAD:
+      setActiveNav(UPLOAD);
+      return renderUpload();
 
-  case UPLOADED:
-    setActiveNav(UPLOADED);
-    return renderUploadedGifs();
+    case UPLOADED:
+      setActiveNav(UPLOADED);
+      return renderUploadedGifs();
 
-  case ABOUT:
-    setActiveNav(ABOUT);
-    return renderAbout();
-  default: return null;
+    case ABOUT:
+      setActiveNav(ABOUT);
+      return renderAbout();
+    default: return null;
   }
 };
 
@@ -91,18 +91,37 @@ export const renderTrending = async () => {
   }
 };
 
+/**
+  * Renders the favorite GIFs on the webpage.
+  * Retrieves the list of favorite GIFs, loads the details of each GIF using the `loadSingleGif` function,
+  * and then generates the HTML markup for displaying the GIFs using the `toFavoritesView` function.
+  * Finally, it updates the content of the container element on the webpage with the generated HTML.
+  *
+  * @returns {void}
+  */
 export const renderFavorites = async () => {
 
   const favorites = getFavorites();
 
   try {
     const result = await Promise.all(favorites.map(id => loadSingleGif(id)));
-    q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(result); // //////???????
+    q(CONTAINER_SELECTOR).innerHTML = toFavoritesView(result);
   } catch (error) {
     console.error(error);
   }
 };
 
+/**
+ * Renders the home view of a GIF application.
+ * Makes an asynchronous request to load random GIFs from the API,
+ * and generates the HTML markup for displaying the GIFs on the home page.
+ * The generated markup is inserted into the DOM to update the content of the container element.
+ *
+ * @example
+ * renderHome();
+ *
+ * @returns {void}
+ */
 export const renderHome = async () => {
   try {
     const randomGIFs = await loadHomePage();
@@ -112,17 +131,34 @@ export const renderHome = async () => {
   }
 };
 
+
+/**
+  * Renders the about view in the application.
+  * 
+  * @example
+  * renderAbout();
+  * 
+  * @returns {void} - This function does not return any value.
+  */
 export const renderAbout = () => {
+
   q(CONTAINER_SELECTOR).innerHTML = toAboutView();
 };
+
+/**
+ * Renders the details of a GIF.
+ * 
+ * @param {string} id - The ID of the GIF for which the details should be rendered. If no ID is provided, the function will attempt to load the details of a default GIF.
+ * @returns {void} - None. The function updates the HTML content of a container element with the rendered GIF details.
+ */
 
 export const renderGifDetails = async (id = null) => {
   try {
     const gifDetails = await loadGifDetails(id);
-    console.log('click det')
     q(CONTAINER_SELECTOR).innerHTML = toGifDetailsView(gifDetails);
 
   } catch (error) {
     console.error(error);
   }
 };
+
