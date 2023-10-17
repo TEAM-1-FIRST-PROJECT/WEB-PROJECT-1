@@ -500,6 +500,9 @@ img {
   font-size: 30px;
 }
 
+#trending h1 {
+  margin-top: 7rem;
+}
 
 #search>div {
   display: grid;
