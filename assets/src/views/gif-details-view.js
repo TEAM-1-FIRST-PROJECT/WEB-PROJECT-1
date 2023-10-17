@@ -12,9 +12,7 @@ export const toGifDetailsView = (gifDetails) => `
     <h1><span class="header-text">User:</span> ${gifDetails.data.username}</h1>
       <h2><span class="header-text">Rating:</span> ${gifDetails.data.rating}</h2>
       <h2><span class="header-text">Title:</span> ${gifDetails.data.title}</h2>
-      <h2><span class="header-text">Source:</span> ${gifDetails.data.source_tld} </h2>
       <h2><span class="header-text">Uploaded date & time:</span> ${gifDetails.data.import_datetime}</h2>
-      <h2><span class="header-text">Trending date & time:</span> ${gifDetails.data.trending_datetime}</h2>
     </div>
   </div>
 `;
