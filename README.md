@@ -66,3 +66,18 @@ GiFTeresT is a modern and interactive website designed for everyone who loves to
 ### User-Friendly Interface
 - GiFTeresT has a simple and attractive design.
 - Easily explore all features with no hassle.
+
+## Teamwork and Collaboration
+
+- This project was a result of great teamwork and collaboration. Our team effectively managed tasks, tracked progress, and ensured a successful project delivery.
+- We utilized tools like Trello to organize our work. Below are a couple of screenshots from our Trello board, showcasing our task management and progress tracking:
+
+Trello Board
+
+<img src=assets/images/Screenshot1.png>
+
+Trello Board - Progress Tracking
+
+<img src=assets/images/Screenshot2.png>
+
+<br>
