@@ -478,6 +478,7 @@ input[type="file"] {
 .upload-form-message {
   font-size: 30px;
   vertical-align: top;
+  margin-top: 3rem;
 }
 
 #outer-upload-form {
