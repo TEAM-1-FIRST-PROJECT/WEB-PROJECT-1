@@ -164,8 +164,8 @@ span {
 .image-container {
   max-width: 600px;
   margin: 0 auto;
-  margin-top: 4rem;
-  z-index: 1;
+  margin-top: 2rem;
+ 
 }
 
 .image-container>img {
