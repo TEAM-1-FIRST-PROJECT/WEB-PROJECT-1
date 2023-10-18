@@ -7,7 +7,11 @@ import { q } from './helpers.js';
   * Fetches GIFs related to the search term and updates the HTML content of a container element with the search results.
   * @param {string} searchTerm - The term to search for GIFs.
   */
-export const renderSearchItems = (searchTerm) => {
-  loadSearchGif(searchTerm)
-    .then(gifs => q(CONTAINER_SELECTOR).innerHTML = toSearchView(gifs.data, searchTerm));
+export const renderSearchItems = async (searchTerm) => {
+  try {
+    const gifs = await loadSearchGif(searchTerm);
+    q(CONTAINER_SELECTOR).innerHTML = toSearchView(gifs.data, searchTerm);
+  } catch (error) {
+    console.log(error.message);
+  }
 };
