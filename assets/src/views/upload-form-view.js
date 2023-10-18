@@ -7,7 +7,7 @@ export const toUploadForm = () => {
   return `
 <div id="outer-upload-form">
   <div class="upload-form">
-    <p class="upload-form-message">upload form</p>
+    <p class="upload-form-message">Upload Form</p>
     <form class="form" id="uploadForm">     
       <input class="input-text" type="text" id="inputGif-username" placeholder="user name"><br />
       <input class="input-text" type="text" id="inputGif-tags" placeholder="enter some tags comma separated"><br />
