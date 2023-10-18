@@ -8,7 +8,7 @@ export const addUploadedGifs = (gifId) => {
   if (uploadedGifs.find(id => id === gifId)) {
     return;
   }
-  
+
   uploadedGifs.push(gifId);
   localStorage.setItem('uploadedGifs', JSON.stringify(uploadedGifs));
 };

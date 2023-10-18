@@ -2,6 +2,7 @@
 import { BASE_URL } from '../common/constants.js';
 import { API_KEY } from '../common/constants.js';
 import { uploadGif } from '../events/upload-event.js';
+import { SHOWN_GIFS_MAX } from '../common/constants.js';
 
 /**
  * Uploads a new GIF on Giphy server.
@@ -37,7 +38,7 @@ export const loadSingleGif = async (id) => {
 export const loadTrendingGif = async () => {
 
   try {
-    const loadTrendingGifURL = `${BASE_URL}/trending?api_key=${API_KEY}&limit=15`;
+    const loadTrendingGifURL = `${BASE_URL}/trending?api_key=${API_KEY}&limit=${SHOWN_GIFS_MAX}`;
     const response = await fetch(loadTrendingGifURL);
     return response.json();
   } catch (error) {
@@ -74,7 +75,7 @@ export const loadGifDetails = async (id) => {
  */
 export const loadSearchGif = async (searchTerm) => {
   try {
-    const loadSearchGifURL = `${BASE_URL}/search?q=${searchTerm}&api_key=${API_KEY}&limit=15`;
+    const loadSearchGifURL = `${BASE_URL}/search?q=${searchTerm}&api_key=${API_KEY}&limit=${SHOWN_GIFS_MAX}`;
     const response = await fetch(loadSearchGifURL);
     return response.json();
   } catch (error) {
