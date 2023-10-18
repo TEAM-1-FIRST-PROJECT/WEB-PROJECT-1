@@ -7,7 +7,7 @@ import { toFavoritesView } from '../views/favorite-view.js';
 import { getFavorites } from '../data/favorites.js';
 import { q, setActiveNav } from './helpers.js';
 import { toUploadForm } from '../views/upload-form-view.js';
-import { getUploadedGifs } from '../data/uploadedGifs.js';
+import { getUploadedGifs } from '../data/uploaded-gifs.js';
 import { toUploadedGifsView } from '../views/uploaded-gifs-view.js';
 import { toGifDetailsView } from '../views/gif-details-view.js';
 

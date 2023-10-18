@@ -1,4 +1,4 @@
-import { addUploadedGifs } from '../data/uploadedGifs.js';
+import { addUploadedGifs } from '../data/uploaded-gifs.js';
 import { UPLOAD_URL, API_KEY } from '../common/constants.js';
 
 /**
