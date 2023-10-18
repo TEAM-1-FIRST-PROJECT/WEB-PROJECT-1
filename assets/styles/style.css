@@ -176,14 +176,16 @@ span {
 }
 
 footer {
-text-align: center;
   color: var(--text-color);
   background-color: var(--bg-color);
-  padding: 6px;
+
+
   position: fixed;
+  left: 0;
   bottom: 0;
   width: 100%;
-  margin-top: 10px;
+
+  text-align: center;
 }
 
 @media (max-width: 600px) {
