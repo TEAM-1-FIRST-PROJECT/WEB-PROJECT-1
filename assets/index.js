@@ -5,6 +5,7 @@ import { loadPage, renderGifDetails } from './src/events/navigation-events.js';
 import { renderSearchItems } from './src/events/search-events.js';
 import { uploadNewGif } from './src/requests/request-service.js';
 import { renderFavorites } from './src/events/navigation-events.js';
+//import { buttonTextHandler } from './src/events/navigation-events.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -37,8 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('change', e => {
     if (e.target.classList.contains('input-text')) {
-      const fileInput = document.getElementById('inputGif').files[0];
-      document.getElementById('input-gif').innerHTML = `<i class="upload" style="font-size:14px"></i>  ${fileInput.name}`;
+      buttonTextHandler();
+      // const fileInput = document.getElementById('inputGif').files[0];
+
+      // document.getElementById('input-gif').innerHTML = `<i class="upload" style="font-size:14px"></i>  ${fileInput.name}`;
     }
   });
   // search events

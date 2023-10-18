@@ -1,8 +1,7 @@
 import { UPLOAD, UPLOADED, TRENDING, HOME, FAVORITES, ABOUT, CONTAINER_SELECTOR } from '../common/constants.js';
-import { loadTrendingGif, loadGifDetails, loadSingleGif, loadHomePage } from '../requests/request-service.js';
+import { loadTrendingGif, loadGifDetails, loadSingleGif } from '../requests/request-service.js';
 import { toAboutView } from '../views/about-view.js';
 import { toTrendingView } from '../views/trending-view.js';
-import { toHomeView } from '../views/home-view.js';
 import { toFavoritesView } from '../views/favorite-view.js';
 import { getFavorites } from '../data/favorites.js';
 import { q, setActiveNav } from './helpers.js';
@@ -10,6 +9,7 @@ import { toUploadForm } from '../views/upload-form-view.js';
 import { getUploadedGifs } from '../data/uploaded-gifs.js';
 import { toUploadedGifsView } from '../views/uploaded-gifs-view.js';
 import { toGifDetailsView } from '../views/gif-details-view.js';
+import { renderSearchItems } from './search-events.js';
 
 /**
  * Loads and renders the specified page based on the provided page name.
@@ -20,30 +20,30 @@ export const loadPage = (page = '') => {
 
   switch (page) {
 
-  case HOME:
-    setActiveNav(HOME);
-    return renderHome();
+    case HOME:
+      setActiveNav(HOME);
+      return renderHome();
 
-  case TRENDING:
-    setActiveNav(TRENDING);
-    return renderTrending();
+    case TRENDING:
+      setActiveNav(TRENDING);
+      return renderTrending();
 
-  case FAVORITES:
-    setActiveNav(FAVORITES);
-    return renderFavorites();
+    case FAVORITES:
+      setActiveNav(FAVORITES);
+      return renderFavorites();
 
-  case UPLOAD:
-    setActiveNav(UPLOAD);
-    return renderUpload();
+    case UPLOAD:
+      setActiveNav(UPLOAD);
+      return renderUpload();
 
-  case UPLOADED:
-    setActiveNav(UPLOADED);
-    return renderUploadedGifs();
+    case UPLOADED:
+      setActiveNav(UPLOADED);
+      return renderUploadedGifs();
 
-  case ABOUT:
-    setActiveNav(ABOUT);
-    return renderAbout();
-  default: return null;
+    case ABOUT:
+      setActiveNav(ABOUT);
+      return renderAbout();
+    default: return null;
   }
 };
 
@@ -114,24 +114,19 @@ export const renderFavorites = async () => {
 
 /**
  * Renders the home view of a GIF application.
- * Makes an asynchronous request to load random GIFs from the API,
- * and generates the HTML markup for displaying the GIFs on the home page.
- * The generated markup is inserted into the DOM to update the content of the container element.
  *
  * @example
  * renderHome();
  *
  * @return {void}
  */
-export const renderHome = async () => {
-  try {
-    const randomGIFs = await loadHomePage();
-    q(CONTAINER_SELECTOR).innerHTML = toHomeView(randomGIFs);
-  } catch (error) {
-    console.error(error.message);
-  }
+export const renderHome = () => {
+  const today = new Date();
+  const dayOfWeek = today.getDay();
+  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const dayName = daysOfWeek[dayOfWeek];
+  renderSearchItems('presentation');
 };
-
 
 /**
   * Renders the about view in the application.
