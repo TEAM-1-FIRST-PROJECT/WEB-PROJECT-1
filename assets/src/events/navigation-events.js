@@ -158,3 +158,7 @@ export const renderGifDetails = async (id = null) => {
   }
 };
 
+export const buttonTextHandler = () => {
+  const fileInput = document.getElementById('inputGif').files[0];
+  document.getElementById('input-gif').innerHTML = `<i class="upload" style="font-size:14px"></i>  ${fileInput.name}`;
+}
