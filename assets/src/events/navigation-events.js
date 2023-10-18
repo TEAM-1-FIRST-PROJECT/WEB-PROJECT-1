@@ -20,30 +20,30 @@ export const loadPage = (page = '') => {
 
   switch (page) {
 
-    case HOME:
-      setActiveNav(HOME);
-      return renderHome();
+  case HOME:
+    setActiveNav(HOME);
+    return renderHome();
 
-    case TRENDING:
-      setActiveNav(TRENDING);
-      return renderTrending();
+  case TRENDING:
+    setActiveNav(TRENDING);
+    return renderTrending();
 
-    case FAVORITES:
-      setActiveNav(FAVORITES);
-      return renderFavorites();
+  case FAVORITES:
+    setActiveNav(FAVORITES);
+    return renderFavorites();
 
-    case UPLOAD:
-      setActiveNav(UPLOAD);
-      return renderUpload();
+  case UPLOAD:
+    setActiveNav(UPLOAD);
+    return renderUpload();
 
-    case UPLOADED:
-      setActiveNav(UPLOADED);
-      return renderUploadedGifs();
+  case UPLOADED:
+    setActiveNav(UPLOADED);
+    return renderUploadedGifs();
 
-    case ABOUT:
-      setActiveNav(ABOUT);
-      return renderAbout();
-    default: return null;
+  case ABOUT:
+    setActiveNav(ABOUT);
+    return renderAbout();
+  default: return null;
   }
 };
 
@@ -113,11 +113,7 @@ export const renderFavorites = async () => {
 };
 
 /**
- * Renders the home view of a GIF application.
- *
- * @example
- * renderHome();
- *
+ * Asynchronously renders the home view of a GIF application.
  * @return {void}
  */
 export const renderHome = () => {
@@ -125,7 +121,7 @@ export const renderHome = () => {
   const dayOfWeek = today.getDay();
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const dayName = daysOfWeek[dayOfWeek];
-  renderSearchItems('presentation');
+  renderSearchItems(dayName);
 };
 
 /**
@@ -158,3 +154,7 @@ export const renderGifDetails = async (id = null) => {
   }
 };
 
+export const buttonTextHandler = () => {
+  const fileInput = document.getElementById('inputGif').files[0];
+  document.getElementById('input-gif').innerHTML = `<i class="upload" style="font-size:14px"></i>  ${fileInput.name}`;
+};

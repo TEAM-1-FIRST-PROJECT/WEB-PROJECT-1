@@ -1,6 +1,7 @@
 import { renderFavoriteStatus } from '../events/favorite-events.js';
 /**
  * Renders an uploaded GIFs in the specified container.
+ *  @param {Array} uploaded - An array of uploaded GIFs.
  * @return {void}
  */
 export const toUploadedGifsView = (uploaded) => {
