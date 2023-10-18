@@ -1,6 +1,6 @@
 import { addUploadedGifs } from '../data/uploaded-gifs.js';
 import { UPLOAD_URL, API_KEY } from '../common/constants.js';
-
+import { HELPER_GIF } from '../common/constants.js';
 /**
  * Handles the submission of the upload form to upload a GIF.
  * @return {void}
@@ -14,6 +14,8 @@ export const uploadGif = () => {
     const username = document.getElementById('inputGif-username').value;
     const tags = document.getElementById('inputGif-tags').value.trim();
     const url = `${UPLOAD_URL}${API_KEY}&username=${username}&tags=${tags}`;
+
+    document.getElementById('uploadForm').innerHTML = `<img src="${HELPER_GIF}" alt="Description" class="helper-gif">`;
 
     formData.append('file', fileInput.files[0]);
     try {
