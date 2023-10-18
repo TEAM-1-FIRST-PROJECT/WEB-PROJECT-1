@@ -302,17 +302,17 @@ h1 {
   cursor: pointer;
   margin-right: 5px;
   margin-top: 1.5px;
-  box-shadow: 0 0 5px white,
-    0 0 25px white;
+  box-shadow: 0 0 3px white,
+    0 0 18px white;
   background-color: white;
   transition: all 0.3s;
 }
 
-.view-trending-details-btn:hover {
+/* .view-trending-details-btn:hover {
   box-shadow: 0 0 5px white,
     0 0 25 white, 0 0 50px white,
-    0 0 100px white, 0 0 500px white;
-}
+    0 0 100px white, 0 0 100px white;
+} */
 
 .favorite {
   background-color: white;
@@ -324,8 +324,8 @@ h1 {
   transition: background-color 0.3s;
   bottom: 0;
   right: 0;
-  box-shadow: 0 0 5px white,
-    0 0 25px white;
+  box-shadow: 0 0 3px white,
+    0 0 18px white;
 }
 
 .favorite:hover {
