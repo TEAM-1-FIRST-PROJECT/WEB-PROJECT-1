@@ -12,24 +12,6 @@ export const uploadNewGif = () => {
 };
 
 /**
- * Loads a collection of GIFs.
- * @return {Promise<Object>} A promise that resolves with the GIFs data.
- * @throws {Error} If there is an error while fetching the GIFs.
- */
-export const loadHomePage = async () => {
-  const today = new Date();
-  const dayOfWeek = today.getDay();
-  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  const dayName = daysOfWeek[dayOfWeek];
-  const url = `${BASE_URL}/search?q=${dayName}&api_key=${API_KEY}&limit=15`; // `${BASE_URL}/${id}?api_key=${API_KEY}&rating=g`
-  try {
-    return (await fetch(url)).json();
-  } catch (error) {
-    console.error(error.message);
-  }
-};
-
-/**
  * Loads a single GIF by its ID.
  * @param {string} id - The ID of the GIF.
  * @return {Promise<Object>} A promise that resolves with the GIF data.
