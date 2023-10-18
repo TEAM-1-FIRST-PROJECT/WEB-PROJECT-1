@@ -14,10 +14,6 @@
 }
 
 :root {
-  --background-color: #ff00d2;
-  --sec-background-color: #fed90f;
-  --third-background-color: #00a2ff;
-  --fourth-background-color: #09f1b8;
   --bg-color: #1f242d;
   --second-bg-color: #323946;
   --text-color: #fff;
@@ -180,13 +176,19 @@ span {
 }
 
 footer {
-  padding: 10px;
-  color: var(--bg-color);
-  font-size: 1.5rem;
+text-align: center;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  padding: 6px;
   position: fixed;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .footer {
+      font-size: 14px;
+  }
 }
 
 .hidden {
@@ -337,7 +339,6 @@ h1 {
 
 .trending-gifs-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
 
 
 }
