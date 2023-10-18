@@ -1,6 +1,7 @@
 import { addUploadedGifs } from '../data/uploaded-gifs.js';
 import { UPLOAD_URL, API_KEY } from '../common/constants.js';
 import { HELPER_GIF } from '../common/constants.js';
+
 /**
  * Handles the submission of the upload form to upload a GIF.
  * @return {void}

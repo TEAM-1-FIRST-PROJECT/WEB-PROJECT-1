@@ -1,3 +1,8 @@
+/**
+ * Renders an abouth info in the specified container.
+ * @return {string}
+ */
+
 export const toAboutView = () => `
 <div id="about-div">
   <div class="about-container">

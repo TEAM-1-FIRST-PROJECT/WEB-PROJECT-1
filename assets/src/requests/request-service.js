@@ -4,7 +4,7 @@ import { API_KEY } from '../common/constants.js';
 import { uploadGif } from '../events/upload-event.js';
 
 /**
- * Uploads a new GIF.
+ * Uploads a new GIF on Giphy server.
  * @return {function} .
   */
 export const uploadNewGif = () => {
